@@ -3,21 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Murder Mystery Game</title>
+    <title>Who Let the Ghost Out</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="game-board">
-        <!-- The game board will be created using CSS -->
+    <div id="intro-page">
+        <h1>Welcome to "Who Let the Ghost Out"</h1>
+        <p>Help the Ghostbusters solve the mystery by guessing the correct character, ghost tool, and area.</p>
+        <button id="start-game">Start Game</button>
     </div>
-    <div id="notebook">
-        <h2>Clue Notebook</h2>
-        <ul id="clues-list">
-            <!-- Clue entries will be added here dynamically -->
-        </ul>
-        <p id="solution">
-            The solution: <span id="solution-text">Unknown</span>
-        </p>
+    <div id="game-container" class="hidden">
+        <div id="game-board">
+            <p>Make your guesses:</p>
+            <input id="character-guess" type="text" placeholder="Character">
+            <input id="tool-guess" type="text" placeholder="Ghost Tool">
+            <input id="area-guess" type="text" placeholder="Area">
+            <button id="make-guess">Make Guess</button>
+        </div>
+        <div id="notebook">
+            <h2>Clue Notebook</h2>
+            <ul id="clues-list">
+                <!-- Clue entries will be added here dynamically -->
+            </ul>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
