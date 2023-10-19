@@ -1,0 +1,76 @@
+/* Style the game board */
+#game-board {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Style the Clue Notebook */
+#notebook {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Style clue list entries */
+.clue-entry {
+    list-style: none;
+    padding: 10px;
+    border: 1px solid #555;
+    margin: 5px;
+    border-radius: 5px;
+    background-color: #444;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+}
+
+.clue-entry:hover {
+    background-color: #555;
+}
+
+/* Style the solution display */
+#solution {
+    background-color: #111;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Style the game board or button */
+#game-board {
+    cursor: pointer;
+}
+
+/* Style input prompts */
+input[type="text"] {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Style the prompt for user input */
+.prompt {
+    color: #fff;
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Style alerts */
+.alert {
+    background-color: #f44336;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+
