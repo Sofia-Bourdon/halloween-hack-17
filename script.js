@@ -39,13 +39,19 @@ function updateClueNotebook() {
     });
 }
 
-function changeOpacityOnHover(){
-    let board = document.getElementById("game-board");
-    board.style.opacity = 1;
-};
-function changeOpacityOnLeave(){
-    let board = document.getElementById("game-board");
-    board.style.opacity = 0.5;
+// Function to highlight the mousedover location
+function changeOpacityOnHover() {
+    let rooms = document.getElementsByClassName("room");
+
+    for(room of rooms) {
+        room.addEventListener("mouseover", function() {
+            this.style.opacity = "1";
+        });
+
+        room.addEventListener("mouseout", function() {
+            this.style.opacity = "0.5";
+        });
+    }
 }
 
-// updateClueNotebook(); // Initialize the Clue Notebook
+updateClueNotebook(); // Initialize the Clue Notebook
