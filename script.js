@@ -28,6 +28,19 @@ console.log("Random Items:", randomItems);
 console.log("All Other Items:", allOtherItems);
 
 
+document.querySelectorAll('td.Action').forEach(cell => {
+    let clickCount = 0;
+    cell.addEventListener('click', () => {
+        clickCount++;
+        cell.classList.remove('Red', 'Green');
+
+        if (clickCount % 3 === 1) {
+            cell.classList.add('Red');
+        } else if (clickCount % 3 === 2) {
+            cell.classList.add('Green');
+        }
+    });
+});
 
 // Generate a random solution
 const solution = {
