@@ -21,37 +21,79 @@
             <div class="container text-center">
                 <h2 class="text-white">Make your guesses:</h2>
                 <div class="row">
-                    <select id="character-guess" name="character-guess" placeholder="Character" class="form-control col-sm m-3">
+                    <select id="character-guess" name="character-guess" placeholder="Character" class="form-control col-sm m-1">
                         <option value="character">Peter Venkman</option>
                         <option value="character">Ray Stantz</option>
                         <option value="character">Egon Spengler</option>
                         <option value="character">Winston Zeddemore</option>
                         <option value="character">Slimer</option>
                     </select>
-                    <select id="tool-guess" placeholder="Chost Tool" class="form-control col-sm m-3">
+                    <select id="tool-guess" placeholder="Chost Tool" class="form-control col-sm m-1">
                         <option value="tool">Proton Pack</option>
                         <option value="tool">PKE Meter</option>
                         <option value="tool">Ghost Trap</option>
                         <option value="tool">Ecto Goggles</option>
                         <option value="tool">Neutrona Wand</option>
                     </select>
-                    <select id="area-guess" placeholder="Area" class="form-control col-sm m-3">
+                    <select id="area-guess" placeholder="Area" class="form-control col-sm m-1">
                         <option value="area">Haunted House</option>
                         <option value="area">Pumpkin Patch</option>
                         <option value="area">Witch's Lair</option>
                         <option value="area">Cemetery</option>
                         <option value="area">Creepy Carnival</option>
                     </select>
-                    <button id="make-guess" class="form-control btn btn-success col-sm m-3">Make Guess</button>
+                    <button id="make-guess" class="form-control btn btn-success col-sm m-1">Make Guess</button>
                 </div>
             </div>
             <br>
-            <div class="media d-block text-center">
-                <img id="game-board" style="opacity: 0.5;"  onmouseover="changeOpacityOnHover()" onmouseleave="changeOpacityOnLeave()" class="img-fluid" src="assets/images/gameboard.png">
+            <!-- GameBoard-->
+            <div id="game-board" class="media d-block text-center">
+                <a href="/carnival.html">
+                    <img 
+                    class="room img-fluid d-inline-sm m-3" 
+                    style="opacity: 0.75; height: 300px; width: 300px;" 
+                    onmouseenter="changeOpacityOnHover()" 
+                    src="assets/images/locations/carnival.jpg"
+                    alt="A creepy carnival">
+                </a>
+                <a href="/cemetary.html">
+                    <img 
+                    class="room img-fluid d-inline-sm m-3" 
+                    style="opacity: 0.75; height: 300px; width: 300px;" 
+                    onmouseenter="changeOpacityOnHover()" 
+                    src="assets/images/locations/cemetary.jpg"
+                    alt="A cemetary">
+                </a>
+                <a href="haunted-house.html">
+                    <img 
+                    class="room img-fluid d-inline-sm m-3" 
+                    style="opacity: 0.75; height: 300px; width: 300px;" 
+                    onmouseenter="changeOpacityOnHover()" 
+                    src="assets/images/locations/haunted-house.jpg"
+                    alt="A haunted house">
+                </a>
+                <a href="/pumpkin-patch.html">
+                    <img 
+                    class="room img-fluid d-inline-sm m-3" 
+                    style="opacity: 0.75; height: 300px; width: 300px;" 
+                    onmouseenter="changeOpacityOnHover()" 
+                    src="assets/images/locations/pumpkin-patch.jpg"
+                    alt="A spooky pumpkin patch">
+                </a>
+                <a href="/witchs-lair.html">
+                    <img 
+                    class="room img-fluid d-inline-sm m-3" 
+                    style="opacity: 0.75; height: 300px; width: 300px;" 
+                    onmouseenter="changeOpacityOnHover()" 
+                    src="assets/images/locations/witch's-lair.jpg"
+                    alt="A witch's lair">
+                </a>
+                
                 <div class="media-body">
-                    <h5 class="mt-0 text-white">Click a room to explore</h5>
+                    <h5 class="mt-0 text-white">Click a room to explore!</h5>
                 </div>
             </div>
+            <!--/.gameboard-->
             <div id="notebook" class="text-center">
                 <h2 class="text-uppercase text-white">Clue Notebook</h2>
                     <ul id="clue-list" class="list-group">
