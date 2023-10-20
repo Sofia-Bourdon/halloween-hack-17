@@ -46,12 +46,10 @@ function changeOpacityOnHover() {
     for(room of rooms) {
         room.addEventListener("mouseover", function() {
             this.style.opacity = "1";
-            this.style.border = "1px solid white";
         });
 
         room.addEventListener("mouseout", function() {
             this.style.opacity = "0.5";
-            this.style.border = none;
         });
     }
 }

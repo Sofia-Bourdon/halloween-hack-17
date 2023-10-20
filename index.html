@@ -4,51 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Who Let the Ghost Out</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <body>
-    <div class="bg-image bg-cover img-fluid" 
-    style="background-image: url('assets/images/ghostbusters-bg.jpg');
-    background-size: cover;
-    background-position: center;">
-        <div class="container-sm text-center p-3">
-            <h1 class="text-white text-uppercase">Welcome to "Who Let the Ghost Out"</h1>
-            <br>
-            <h3 class="text-white text-uppercase m-3">Help the Ghostbusters solve the mystery by guessing the correct character, ghost tool, and area.</h3>
-            <br>
-            <button id="start-game" class="btn btn-lg btn-light">Start Game</button>
-        </div>
-            <div class="container text-center">
-                <h2 class="text-white">Make your guesses:</h2>
-                <div class="row">
-                    <select id="character-guess" name="character-guess" placeholder="Character" class="form-control col-sm m-1">
-                        <option value="character">Peter Venkman</option>
-                        <option value="character">Ray Stantz</option>
-                        <option value="character">Egon Spengler</option>
-                        <option value="character">Winston Zeddemore</option>
-                        <option value="character">Slimer</option>
-                    </select>
-                    <select id="tool-guess" placeholder="Chost Tool" class="form-control col-sm m-1">
-                        <option value="tool">Proton Pack</option>
-                        <option value="tool">PKE Meter</option>
-                        <option value="tool">Ghost Trap</option>
-                        <option value="tool">Ecto Goggles</option>
-                        <option value="tool">Neutrona Wand</option>
-                    </select>
-                    <select id="area-guess" placeholder="Area" class="form-control col-sm m-1">
-                        <option value="area">Haunted House</option>
-                        <option value="area">Pumpkin Patch</option>
-                        <option value="area">Witch's Lair</option>
-                        <option value="area">Cemetery</option>
-                        <option value="area">Creepy Carnival</option>
-                    </select>
-                    <button id="make-guess" class="form-control btn btn-success col-sm m-1">Make Guess</button>
-                </div>
+    <header class="text-center container-sm">
+        <h1 class="text-white text-uppercase text-decoration-underline">Death's Veil</h1>
+        <br>
+        <h3 class="text-white text-uppercase m-3">A detective's story</h3>
+        <br>
+        <p class="text-center text-white text-uppercase m-3">A gruesome series of murders has taken place in the town. Can you collect enough evidence to sovle the case before more deaths occur</p>
+        <button id="start-game" class="btn btn-lg btn-light">Start Game</button>
+    </header>
+    <main>
+        <!-- Character Cards -->
+        <div class="text-center row">
+            <h2 class="text-white">Make your guesses:</h2>
+            <div class="col-sm m-3">
+                <select id="character-guess" name="character-guess" placeholder="Character" class="form-control">
+                    <option value="character">Peter Venkman</option>
+                    <option value="character">Ray Stantz</option>
+                    <option value="character">Egon Spengler</option>
+                    <option value="character">Winston Zeddemore</option>
+                    <option value="character">Slimer</option>
+                </select>
             </div>
-            <br>
-            <!-- GameBoard-->
-            <div id="game-board" class="media d-block text-center">
-                <a href="/carnival.html">
+            <div class="col-sm m-3">
+                <select id="tool-guess" placeholder="Chost Tool" class="form-control">
+                    <option value="tool">Proton Pack</option>
+                    <option value="tool">PKE Meter</option>
+                    <option value="tool">Ghost Trap</option>
+                    <option value="tool">Ecto Goggles</option>
+                    <option value="tool">Neutrona Wand</option>
+                </select>
+            </div>
+            <div class="col-sm m-3">
+                <select id="area-guess" placeholder="Area" class="form-control">
+                    <option value="area">Haunted House</option>
+                    <option value="area">Pumpkin Patch</option>
+                    <option value="area">Witch's Lair</option>
+                    <option value="area">Cemetery</option>
+                    <option value="area">Creepy Carnival</option>
+                </select>
+            </div>
+            <button id="make-guess" class="form-control btn btn-success col-sm m-3">Make Guess</button>
+        </div>
+        <br>
+        <!--/character cards-->
+        <!-- Locations-->
+        <section id= "locations" class="media text-center row">
+            <div class="col-sm">
+                <a href="/carnival.html" class="text-decoration-none">
                     <img 
                     class="room img-fluid d-inline-sm m-3" 
                     style="opacity: 0.75; height: 300px; width: 300px;" 
@@ -56,7 +62,9 @@
                     src="assets/images/locations/carnival.jpg"
                     alt="A creepy carnival">
                 </a>
-                <a href="/cemetary.html">
+            </div>
+            <div class="col-sm">
+                <a href="/cemetary.html" class="text-decoration-none">
                     <img 
                     class="room img-fluid d-inline-sm m-3" 
                     style="opacity: 0.75; height: 300px; width: 300px;" 
@@ -64,6 +72,8 @@
                     src="assets/images/locations/cemetary.jpg"
                     alt="A cemetary">
                 </a>
+            </div>
+            <div class="col-sm" class="text-decoration-none">
                 <a href="haunted-house.html">
                     <img 
                     class="room img-fluid d-inline-sm m-3" 
@@ -72,6 +82,8 @@
                     src="assets/images/locations/haunted-house.jpg"
                     alt="A haunted house">
                 </a>
+            </div>
+            <div class="col-sm" class="text-decoration-none">
                 <a href="/pumpkin-patch.html">
                     <img 
                     class="room img-fluid d-inline-sm m-3" 
@@ -80,7 +92,9 @@
                     src="assets/images/locations/pumpkin-patch.jpg"
                     alt="A spooky pumpkin patch">
                 </a>
-                <a href="/witchs-lair.html">
+            </div>
+            <div class="col-sm">
+                <a href="/witchs-lair.html" class="text-decoration-none">
                     <img 
                     class="room img-fluid d-inline-sm m-3" 
                     style="opacity: 0.75; height: 300px; width: 300px;" 
@@ -88,20 +102,27 @@
                     src="assets/images/locations/witch's-lair.jpg"
                     alt="A witch's lair">
                 </a>
-                
-                <div class="media-body">
-                    <h5 class="mt-0 text-white">Click a room to explore!</h5>
-                </div>
             </div>
-            <!--/.gameboard-->
-            <div id="notebook" class="text-center">
-                <h2 class="text-uppercase text-white">Clue Notebook</h2>
-                    <ul id="clue-list" class="list-group">
-                        <!-- Clue entries will be added here dynamically -->
-                    </ul>
+            <div class="media-body">
+                <h5 class="mt-0 text-white">Click a room to explore!</h5>
             </div>
+        </section>
+        <!--/locations-->
+
+        <!--Notebook-->
+        <div id="notebook" class="text-center">
+            <h2 class="text-uppercase text-white">Clue Notebook</h2>
+                <ul id="clue-list" class="list-group">
+                    <!-- Clue entries will be added here dynamically -->
+                </ul>
         </div>
-    </div>
+        <!--/notebook-->
+    </main>
+    <footer>
+
+    </footer>
+
+    <!--scripts-->
     <script src="script.js"></script>
 </body>
 </html>
