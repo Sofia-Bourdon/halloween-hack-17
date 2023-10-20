@@ -1,3 +1,18 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+/*Add BG image*/
+body {
+    background-image: url('');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+
 /* Style the game board */
 #game-board {
     background-color: #000;
@@ -72,5 +87,7 @@ input[type="text"] {
     margin-top: 20px;
     border-radius: 5px;
 }
+
+
 
 

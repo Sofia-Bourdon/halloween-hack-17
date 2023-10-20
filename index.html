@@ -4,27 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Who Let the Ghost Out</title>
-    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <body>
-    <div id="intro-page">
-        <h1>Welcome to "Who Let the Ghost Out"</h1>
-        <p>Help the Ghostbusters solve the mystery by guessing the correct character, ghost tool, and area.</p>
-        <button id="start-game">Start Game</button>
-    </div>
-    <div id="game-container" class="hidden">
-        <div id="game-board">
-            <p>Make your guesses:</p>
-            <input id="character-guess" type="text" placeholder="Character">
-            <input id="tool-guess" type="text" placeholder="Ghost Tool">
-            <input id="area-guess" type="text" placeholder="Area">
-            <button id="make-guess">Make Guess</button>
+    <div class="bg-image bg-cover img-fluid" 
+    style="background-image: url('assets/images/ghostbusters-bg.jpg');
+    background-size: cover;
+    background-position: center;">
+        <div class="container-sm text-center p-3">
+            <h1 class="text-white text-uppercase">Welcome to "Who Let the Ghost Out"</h1>
+            <br>
+            <h3 class="text-white text-uppercase m-3">Help the Ghostbusters solve the mystery by guessing the correct character, ghost tool, and area.</h3>
+            <br>
+            <button id="start-game" class="btn btn-lg btn-light">Start Game</button>
         </div>
-        <div id="notebook">
-            <h2>Clue Notebook</h2>
-            <ul id="clues-list">
-                <!-- Clue entries will be added here dynamically -->
-            </ul>
+            <div class="container text-center">
+                <h2 class="text-white">Make your guesses:</h2>
+                <div class="row">
+                    <select id="character-guess" name="character-guess" placeholder="Character" class="form-control col-sm m-3">
+                        <option value="character">Peter Venkman</option>
+                        <option value="character">Ray Stantz</option>
+                        <option value="character">Egon Spengler</option>
+                        <option value="character">Winston Zeddemore</option>
+                        <option value="character">Slimer</option>
+                    </select>
+                    <select id="tool-guess" placeholder="Chost Tool" class="form-control col-sm m-3">
+                        <option value="tool">Proton Pack</option>
+                        <option value="tool">PKE Meter</option>
+                        <option value="tool">Ghost Trap</option>
+                        <option value="tool">Ecto Goggles</option>
+                        <option value="tool">Neutrona Wand</option>
+                    </select>
+                    <select id="area-guess" placeholder="Area" class="form-control col-sm m-3">
+                        <option value="area">Haunted House</option>
+                        <option value="area">Pumpkin Patch</option>
+                        <option value="area">Witch's Lair</option>
+                        <option value="area">Cemetery</option>
+                        <option value="area">Creepy Carnival</option>
+                    </select>
+                    <button id="make-guess" class="form-control btn btn-success col-sm m-3">Make Guess</button>
+                </div>
+            </div>
+            <br>
+            <div class="media d-block text-center">
+                <img id="game-board" style="opacity: 0.5;"  onmouseover="changeOpacityOnHover()" onmouseleave="changeOpacityOnLeave()" class="img-fluid" src="assets/images/gameboard.png">
+                <div class="media-body">
+                    <h5 class="mt-0 text-white">Click a room to explore</h5>
+                </div>
+            </div>
+            <div id="notebook" class="text-center">
+                <h2 class="text-uppercase text-white">Clue Notebook</h2>
+                    <ul id="clue-list" class="list-group">
+                        <!-- Clue entries will be added here dynamically -->
+                    </ul>
+            </div>
         </div>
     </div>
     <script src="script.js"></script>

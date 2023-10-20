@@ -2,12 +2,12 @@
 
 const characters = ["Peter Venkman", "Ray Stantz", "Egon Spengler", "Winston Zeddemore", "Slimer"];
 const ghostTools = ["Proton Pack", "PKE Meter", "Ghost Trap", "Ecto Goggles", "Neutrona Wand"];
-const halloweenAreas = ["Haunted House", "Pumpkin Patch", "Witch's Lair", "Cemetery", "Creepy Carnival"];
+const rooms = ["Haunted House", "Pumpkin Patch", "Witch's Lair", "Cemetery", "Creepy Carnival"];
 
 // Generate a random solution
 const solution = {
     character: characters[Math.floor(Math.random() * characters.length)],
-    weapon: weapons[Math.floor(Math.random() * weapons.length)],
+    weapon: ghostTools[Math.floor(Math.random() * ghostTools.length)],
     room: rooms[Math.floor(Math.random() * rooms.length)]
 };
 
@@ -19,7 +19,7 @@ document.getElementById("solution-text").textContent = `${solution.character} in
 
 // Populate the Clue Notebook with initial clues
 characters.forEach(character => {
-    weapons.forEach(weapon => {
+    ghostTools.forEach(weapon => {
         rooms.forEach(room => {
             clues.push({ character, weapon, room, status: "Unknown" });
         });
@@ -29,7 +29,7 @@ characters.forEach(character => {
 // Function to update the Clue Notebook
 function updateClueNotebook() {
     const cluesList = document.getElementById("clues-list");
-    cluesList.innerHTML = ""; // Clear existing clues
+    cluesList.innerHTML = "Hello"; // Clear existing clues
 
     clues.forEach(clue => {
         const clueEntry = document.createElement("li");
@@ -39,4 +39,13 @@ function updateClueNotebook() {
     });
 }
 
-updateClueNotebook(); // Initialize the Clue Notebook
+function changeOpacityOnHover(){
+    let board = document.getElementById("game-board");
+    board.style.opacity = 1;
+};
+function changeOpacityOnLeave(){
+    let board = document.getElementById("game-board");
+    board.style.opacity = 0.5;
+}
+
+// updateClueNotebook(); // Initialize the Clue Notebook
