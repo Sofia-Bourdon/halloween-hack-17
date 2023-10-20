@@ -100,10 +100,6 @@ input[type="text"] {
     font-family: 'Arial', sans-serif;
 }
 
-<<<<<<< HEAD
-
-
-=======
 /* Style the button */
 #start-game {
     background-color: #333;
@@ -117,4 +113,3 @@ input[type="text"] {
 #start-game:hover {
     background-color: #555;
 }
->>>>>>> 23b92ef (Add parchment image)
