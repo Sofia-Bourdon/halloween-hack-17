@@ -27,7 +27,7 @@ const allOtherItems = [
 console.log("Random Items:", randomItems);
 console.log("All Other Items:", allOtherItems);
 
-
+// Click event to make table interactive for user 
 document.querySelectorAll('td.Action').forEach(cell => {
     let clickCount = 0;
     cell.addEventListener('click', () => {
@@ -45,7 +45,7 @@ document.querySelectorAll('td.Action').forEach(cell => {
 // Generate a random solution
 const solution = {
     character: characters[Math.floor(Math.random() * characters.length)],
-    weapon: ghostTools[Math.floor(Math.random() * ghostTools.length)],
+    ghostTool: ghostTools[Math.floor(Math.random() * ghostTools.length)],
     room: rooms[Math.floor(Math.random() * rooms.length)]
 };
 
@@ -53,43 +53,5 @@ const solution = {
 const clues = [];
 
 // Display the solution
-document.getElementById("solution-text").textContent = `${solution.character} in the ${solution.room} with the ${solution.weapon}`;
+document.getElementById("solution-text").textContent = `${solution.character} with the ${solution.ghostTool}in the ${solution.room}`;
 
-// Populate the Clue Notebook with initial clues
-characters.forEach(character => {
-    ghostTools.forEach(weapon => {
-        rooms.forEach(room => {
-            clues.push({ character, weapon, room, status: "Unknown" });
-        });
-    });
-});
-
-// Function to update the Clue Notebook
-function updateClueNotebook() {
-    const cluesList = document.getElementById("clues-list");
-    cluesList.innerHTML = "Hello"; // Clear existing clues
-
-    clues.forEach(clue => {
-        const clueEntry = document.createElement("li");
-        clueEntry.className = "clue-entry";
-        clueEntry.textContent = `${clue.character}, ${clue.weapon}, ${clue.room}: ${clue.status}`;
-        cluesList.appendChild(clueEntry);
-    });
-}
-
-// Function to highlight the mousedover location
-function changeOpacityOnHover() {
-    let rooms = document.getElementsByClassName("room");
-
-    for(room of rooms) {
-        room.addEventListener("mouseover", function() {
-            this.style.opacity = "1";
-        });
-
-        room.addEventListener("mouseout", function() {
-            this.style.opacity = "0.5";
-        });
-    }
-}
-
-updateClueNotebook(); // Initialize the Clue Notebook
