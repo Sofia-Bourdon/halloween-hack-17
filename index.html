@@ -8,17 +8,20 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <body>
-    <header class="text-center container-sm">
-        <h1 class="text-white text-uppercase text-decoration-underline">Death's Veil</h1>
-        <br>
-        <h3 class="text-white text-uppercase m-3">A detective's story</h3>
-        <br>
-        <p class="text-center text-white text-uppercase m-3">On a dark and gloomy Halloween night our group of intrepid heroes were preparing for their annual night of celebration. 
+    <header class="text-center">
+        <div class="container bg-secondary opacity-75 p-3">
+            <h1 class="text-dark text-uppercase text-decoration-underline">Death's Veil</h1>
+            <br>
+            <h3 class="text-dark text-uppercase m-1">A detective's story</h3>
+            <br>
+            <p class="text-dark text-uppercase m-1">On a dark and gloomy Halloween night our group of intrepid heroes were preparing for their annual night of celebration. 
             Ever since they fought to save Los Angeles and the world from annihilation to the undead army they have celebrated their vitory every year on halloween.
             They light up Fire Station 23 with as many illuminated decorations as possible. Just as everyone was about to sit back and enjoy the huge spectacle with fireworks disaster strikes.
             Someone let slimer out. It is your job to find out who realeased Slimer, How they released him and where in Fire station 23 did the event occur. </p>
-        <button id="start-game" class="btn btn-lg btn-light">Start Game</button>
+        </div>
+        <button id="start-game" class="text-center btn-lg btn-light mt-1">Start Game</button>
     </header>
+    
     <main>
         <!-- Character Cards -->
         <div class="text-center row">
@@ -59,7 +62,9 @@
                     <option value="area">Sleeping Quarters</option>
                 </select>
             </div>
-            <button id="make-guess" class="form-control btn btn-success col-sm m-3">Make Guess</button>
+        </div>
+        <div class="d-flex justify-content-center">
+            <button id="make-guess" class="btn btn-success">Make Guess</button>
         </div>
         <br>
         <!--/character cards-->
@@ -68,7 +73,10 @@
             <div class="col-sm">
                 <a href="/carnival.html" class="text-decoration-none">
                     <img 
-                    class="room img-fluid d-inline-sm m-3" 
+                    class="room d-inline-md m-3"
+                    data-toggle="tooltip"
+                    data-placement="bottom"
+                    title="Go to the creepy carnival!" 
                     style="opacity: 0.75; height: 300px; width: 300px;" 
                     onmouseenter="changeOpacityOnHover()" 
                     src="assets/images/locations/carnival.jpg"
@@ -78,7 +86,10 @@
             <div class="col-sm">
                 <a href="/cemetary.html" class="text-decoration-none">
                     <img 
-                    class="room img-fluid d-inline-sm m-3" 
+                    class="room d-inline-md m-3"
+                    data-toggle="tooltip"
+                    data-placement="bottom"
+                    title="Go to the Cemetary" 
                     style="opacity: 0.75; height: 300px; width: 300px;" 
                     onmouseenter="changeOpacityOnHover()" 
                     src="assets/images/locations/cemetary.jpg"
@@ -88,7 +99,10 @@
             <div class="col-sm" class="text-decoration-none">
                 <a href="haunted-house.html">
                     <img 
-                    class="room img-fluid d-inline-sm m-3" 
+                    class="room d-inline-md m-3"
+                    data-toggle="tooltip"
+                    data-placement="bottom"
+                    title="Go to the Haunted House" 
                     style="opacity: 0.75; height: 300px; width: 300px;" 
                     onmouseenter="changeOpacityOnHover()" 
                     src="assets/images/locations/haunted-house.jpg"
@@ -98,7 +112,10 @@
             <div class="col-sm" class="text-decoration-none">
                 <a href="/pumpkin-patch.html">
                     <img 
-                    class="room img-fluid d-inline-sm m-3" 
+                    class="room d-inline-md m-3"
+                    data-toggle="tooltip"
+                    data-placement="bottom"
+                    title="Go to the Pumpkin Patch"  
                     style="opacity: 0.75; height: 300px; width: 300px;" 
                     onmouseenter="changeOpacityOnHover()" 
                     src="assets/images/locations/pumpkin-patch.jpg"
@@ -108,7 +125,10 @@
             <div class="col-sm">
                 <a href="/witchs-lair.html" class="text-decoration-none">
                     <img 
-                    class="room img-fluid d-inline-sm m-3" 
+                    class="room d-inline-md m-3"
+                    data-toggle="tooltip"
+                    data-placement="bottom"
+                    title="Go to the Witch's Lair" 
                     style="opacity: 0.75; height: 300px; width: 300px;" 
                     onmouseenter="changeOpacityOnHover()" 
                     src="assets/images/locations/witch's-lair.jpg"
@@ -129,6 +149,14 @@
                 </ul>
         </div>
         <!--/notebook-->
+        <!--Clue's List-->
+        <section id="clues-list">
+            <ul></ul>
+            <ul></ul>
+            <ul></ul>
+            <ul></ul>
+            <ul></ul>
+        </section>
     </main>
     <footer>
 
