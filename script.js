@@ -2,12 +2,12 @@
 
 const characters = ["Peter Venkman", "Ray Stantz", "Egon Spengler", "Winston Zeddemore", "Slimer"];
 const ghostTools = ["Proton Pack", "PKE Meter", "Ghost Trap", "Ecto Goggles", "Neutrona Wand"];
-const halloweenAreas = ["Haunted House", "Pumpkin Patch", "Witch's Lair", "Cemetery", "Creepy Carnival"];
+const rooms = ["Haunted House", "Pumpkin Patch", "Witch's Lair", "Cemetery", "Creepy Carnival"];
 
 // Generate a random solution
 const solution = {
     character: characters[Math.floor(Math.random() * characters.length)],
-    weapon: weapons[Math.floor(Math.random() * weapons.length)],
+    weapon: ghostTools[Math.floor(Math.random() * weapons.length)],
     room: rooms[Math.floor(Math.random() * rooms.length)]
 };
 
