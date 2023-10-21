@@ -6,7 +6,7 @@
 body {
   width: 100%;
   height: auto;
-  background-image: url("../images/locations/carnival.jpg");
+  background-image: url("../images/background.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -77,16 +77,6 @@ td.Action.Green {
   background-color: green;
 }
 
-#characters-table {
-  width: 20%;
-}
-
-#ghost-tools-table {
-  width: 20%;
-}
-#rooms-table {
-  width: 20%;
-}
 
 /* Style the submit button */
 #submit-button {
