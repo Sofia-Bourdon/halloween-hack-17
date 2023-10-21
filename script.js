@@ -34,20 +34,16 @@ document.querySelectorAll('td.Action').forEach(cell => {
         clickCount++;
         cell.classList.remove('Red', 'Green');
 
-        if (clickCount % 3 === 1) {
+        if (clickCount % 1 === 0) {
             cell.classList.add('Red');
-        } else if (clickCount % 3 === 2) {
+        } else if (clickCount % 2 === 0) {
             cell.classList.add('Green');
-        }
+        } else (cel.classlist.add())
     });
 });
 
-// Generate a random solution
-const solution = {
-    character: characters[Math.floor(Math.random() * characters.length)],
-    ghostTool: ghostTools[Math.floor(Math.random() * ghostTools.length)],
-    room: rooms[Math.floor(Math.random() * rooms.length)]
-};
+// Check players input against computers choice
+
 
 // Create an array to store clues
 const clues = [];
