@@ -49,6 +49,82 @@ function highlightSelectedRowOnTable() {
     };
 };
 
+function highlightSelectedRowOnTable2() {
+    // get refernce to the table
+    let table = document.getElementById("table2");
+    //get refernce to the rows
+    let rows = table.getElementsByTagName("tr");
+
+    //iterate through the rows
+    for (let i = 0; i < rows.length; i++) {
+        let currentRow = table.rows[i];
+
+        //bind click event to the row
+        currentRow.onclick = function() {
+            clickcounter++;
+            //highlight the selected row
+            console.log("You selected:", this);
+            if (clickcounter === 1) {
+                this.classList.add("DefinitelyNot");
+                this.children[0].style.color = "red";
+            } else if (clickcounter === 2) {
+                this.classList.remove("DefinitelyNot");
+                this.classList.add("Possibly");
+                this.children[0].style.color = "blue";
+            } else if (clickcounter === 3) {
+                this.classList.remove("Possibly");
+                this.classList.add("Definitely");
+                this.children[0].style.color = "green";
+            } else {
+                this.classList.remove("Definitely");
+                this.classList.add("NotSelected");
+                this.children[0].style.color = "black";
+                clickcounter = 0;
+            }
+            console.log(this.classList);
+            console.log(clickcounter);
+        }
+    };
+}
+
+function highlightSelectedRowOnTable3() {
+    // get refernce to the table
+    let table = document.getElementById("table3");
+    //get refernce to the rows
+    let rows = table.getElementsByTagName("tr");
+
+    //iterate through the rows
+    for (let i = 0; i < rows.length; i++) {
+        let currentRow = table.rows[i];
+
+        //bind click event to the row
+        currentRow.onclick = function() {
+            clickcounter++;
+            //highlight the selected row
+            console.log("You selected:", this);
+            if (clickcounter === 1) {
+                this.classList.add("DefinitelyNot");
+                this.children[0].style.color = "red";
+            } else if (clickcounter === 2) {
+                this.classList.remove("DefinitelyNot");
+                this.classList.add("Possibly");
+                this.children[0].style.color = "blue";
+            } else if (clickcounter === 3) {
+                this.classList.remove("Possibly");
+                this.classList.add("Definitely");
+                this.children[0].style.color = "green";
+            } else {
+                this.classList.remove("Definitely");
+                this.classList.add("NotSelected");
+                this.children[0].style.color = "black";
+                clickcounter = 0;
+            }
+            console.log(this.classList);
+            console.log(clickcounter);
+        }
+    };
+}
+
 // Function to highlight the mousedover location
 function changeOpacityOnHover() {
     let scenes = document.getElementsByClassName("room");
@@ -94,7 +170,8 @@ function checkSelections() {
  
      // Check if selected items match randomItems or allOtherItems and apply highlighting
      if (randomItems.includes(selectedCharacter)) {
-         characterDropdown.style.backgroundColor = "green";
+        
+        characterDropdown.style.backgroundColor = "green";
      } else if (allOtherItems.includes(selectedCharacter)) {
          characterDropdown.style.backgroundColor = "red";
      }
