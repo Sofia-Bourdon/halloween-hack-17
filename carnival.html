@@ -84,7 +84,7 @@
                     </tbody>
                 </table>
             </div>
-            <div id="room-sheet" class="col-sm p-3">
+            <div id="scene-sheet" class="col-sm p-3">
                 <table id="table" class="table table-striped text-center" onclick="highlightSelectedRowOnTable()">
                     <thead class="thead-dark">
                         <tr>
@@ -120,6 +120,41 @@
                 </table>
             </div>
         </section>
+        <div class="text-center">
+            <h2>Random Pick</h2>
+            <div class="dropdown">
+              <select name="character" id="character-dropdown">
+                <option value="Peter Venkman">Peter Venkman</option>
+                <option value="Ray Stantz">Ray Stantz</option>
+                <option value="Egon Spengler">Egon Spengler</option>
+                <option value="Winston Zeddemore">Winston Zeddemore</option>
+                <option value="Abby Yates">Abby Yates</option>
+                <option value="Patty Tolan">Patty Tolan</option>
+                <option value="Jillian Holtzmann">Jillian Holtzmann</option>
+                <option value="Erin Gilbert">Erin Gilbert</option>
+              </select>
+              <select name="weapon" id="weapon-dropdown">
+                <option value="Proton Pack">Proton Pack</option>
+                <option value="PKE Meter">PKE Meter</option>
+                <option value="Ghost Trap">Ghost Trap</option>
+                <option value="Ecto Goggles">Ecto Goggles</option>
+                <option value="Neutrona Wand">Neutrona Wand</option>
+                <option value="Spirit Box">Spirit Box</option>
+                <option value="REM Pod">REM Pod</option>
+                <option value="Ghost Book">Ghost Book</option>
+              </select>
+              <select name="room" id="scene-dropdown">
+                <option value="Games Room">Games Room</option>
+                <option value="Kitchen">Kitchen</option>
+                <option value="Living Quarters">Living Quarters</option>
+                <option value="Office">Office</option>
+                <option value="Reception">Reception</option>
+                <option value="Attic">Attic</option>
+                <option value="Basement">Basement</option>
+                <option value="Sleeping Quarters">Sleeping Quarters</option>
+              </select>
+              <button id="submit-button" onclick="checkSelections()">Submit</button>
+            </div>
     </main>
     <footer>
 
