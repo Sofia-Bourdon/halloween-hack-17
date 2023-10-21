@@ -1,8 +1,8 @@
 // Define characters, weapons, and rooms
 
 const characters = ["Peter Venkman", "Ray Stantz", "Egon Spengler", "Winston Zeddemore", "Abby Yates", "Patty Tolan", "Jillian Holtzmann", "Erin Gilbert"];
-const ghostTools = ["Proton Pack", "PKE Meter", "Ghost Trap", "Ecto Goggles", "Neutrona Wand", "Spirit Box", "REM Pod", "Ghost Book"];
-const rooms = ["Games Room", "Kitchen", "Living Quarters", "Office", "Reception", "Attic", "Basement", "Sleeping Quarters"];
+const weapons = ["Proton Pack", "PKE Meter", "Ghost Trap", "Ecto Goggles", "Neutrona Wand", "Spirit Box", "REM Pod", "Ghost Book"];
+const scenes = ["Games Room", "Kitchen", "Living Quarters", "Office", "Reception", "Attic", "Basement", "Sleeping Quarters"];
 let clickcounter = 0;
 
 // Function to randomly select an item from a list
@@ -51,7 +51,7 @@ function highlightSelectedRowOnTable() {
 
 // Function to highlight the mousedover location
 function changeOpacityOnHover() {
-    let rooms = document.getElementsByClassName("room");
+    let scenes = document.getElementsByClassName("room");
 
     for(room of rooms) {
         room.addEventListener("mouseover", function() {
@@ -67,16 +67,47 @@ function changeOpacityOnHover() {
 // Array to store the three randomized items
 const randomItems = [
     getRandomItem(characters),
-    getRandomItem(ghostTools),
-    getRandomItem(rooms)
+    getRandomItem(weapons),
+    getRandomItem(scenes)
 ];
 
 // Array to store all other items except the three chosen randomly
 const allOtherItems = [
     ...characters.filter(character => !randomItems.includes(character)),
-    ...ghostTools.filter(tool => !randomItems.includes(tool)),
-    ...rooms.filter(room => !randomItems.includes(room))
+    ...weapons.filter(weapon => !randomItems.includes(weapon)),
+    ...scenes.filter(scene => !randomItems.includes(scene))
 ];
 
 console.log("Random Items:", randomItems);
 console.log("All Other Items:", allOtherItems);
+
+// Function to highlight selected items based on matches
+function checkSelections() {
+    const characterDropdown = document.getElementById("character-dropdown");
+    const weaponDropdown = document.getElementById("weapon-dropdown");
+    const sceneDropdown = document.getElementById("scene-dropdown");
+
+     // Get the selected values
+     const selectedCharacter = characterDropdown.value;
+     const selectedWeapon = weaponDropdown.value;
+     const selectedScene = sceneDropdown.value;
+ 
+     // Check if selected items match randomItems or allOtherItems and apply highlighting
+     if (randomItems.includes(selectedCharacter)) {
+         characterDropdown.style.backgroundColor = "green";
+     } else if (allOtherItems.includes(selectedCharacter)) {
+         characterDropdown.style.backgroundColor = "red";
+     }
+ 
+     if (randomItems.includes(selectedWeapon)) {
+         weaponDropdown.style.backgroundColor = "green";
+     } else if (allOtherItems.includes(selectedWeapon)) {
+         weaponDropdown.style.backgroundColor = "red";
+     }
+ 
+     if (randomItems.includes(selectedScene)) {
+         sceneDropdown.style.backgroundColor = "green";
+     } else if (allOtherItems.includes(selectedScene)) {
+         sceneDropdown.style.backgroundColor = "red";
+     }
+ }
