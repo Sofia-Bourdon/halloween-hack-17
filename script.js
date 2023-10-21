@@ -26,28 +26,3 @@ const allOtherItems = [
 
 console.log("Random Items:", randomItems);
 console.log("All Other Items:", allOtherItems);
-
-// Click event to make table interactive for user 
-document.querySelectorAll('td.Action').forEach(cell => {
-    let clickCount = 0;
-    cell.addEventListener('click', () => {
-        clickCount++;
-        cell.classList.remove('Red', 'Green');
-
-        if (clickCount % 1 === 0) {
-            cell.classList.add('Red');
-        } else if (clickCount % 2 === 0) {
-            cell.classList.add('Green');
-        } else (cel.classlist.add())
-    });
-});
-
-// Check players input against computers choice
-
-
-// Create an array to store clues
-const clues = [];
-
-// Display the solution
-document.getElementById("solution-text").textContent = `${solution.character} with the ${solution.ghostTool}in the ${solution.room}`;
-
