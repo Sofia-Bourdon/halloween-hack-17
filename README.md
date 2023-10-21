@@ -1,13 +1,13 @@
 
-<h3>Deaths Veil</h3>
-<h4>A Murder Mystery</h4>
+<h1 align="center"><strong>Deaths Veil</strong></h1>
+<h2 align="center"><strong>A Murder Mystery</strong></h2>
 <br>
-<h1 align="center"><strong>🎃🎃🎃 Phantom Forge: A Halloween Hackathon 🎃🎃🎃</strong>
+<h3 align="center"><strong>🎃🎃🎃 Phantom Forge: A Halloween Hackathon 🎃🎃🎃</strong>
 
-</h1>
+</h3>
 
 
-<img src="../halloween-hack-17/assets/images/locations/carnival.jpg" alt="Carnival Scene" width="1200"/>
+<img src="assets/images/locations/carnival.jpg" alt="Carnival Scene" width="1200"/>
 
 # SUBMISSION
 ## Deployment
