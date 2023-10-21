@@ -101,6 +101,36 @@ input[type="text"] {
 }
 */
 
+.grid-container {
+    display: grid;
+    height: auto;
+    align-content: start;
+    grid-template-columns: auto auto auto;
+    gap: 10px;
+    background-color: #030303;
+    padding: 10px;
+}
+  
+.grid-container > div {
+    background-color: rgba(177, 175, 175, 0.8);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+}
+
+.game-sheet {
+    
+}
+
+.characters-table {
+    float:left;
+}
+
+.rooms-table {
+    float:right;
+}
+
+
 /* Style the button */
 #start-game {
     background-color: #333;
@@ -142,11 +172,26 @@ td.Action.Green {
 }
 
 #characters-table {
-    width: 10%;
+    width: 20%;
 }
+
 #ghost-tools-table {
-    width: 10%;
+    width: 20%;
 }
 #rooms-table {
-    width: 10%;
+    width: 20%;
+}
+
+/* Style the submit button */
+#submit-button {
+    background-color: #4CAF50; 
+    color: #fff; /* White text color */
+    border: none; 
+    padding: 10px 20px; 
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#submit-button:hover {
+    background-color: #45a049;
 }
