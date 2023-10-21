@@ -11,6 +11,16 @@
     background-repeat: no-repeat;
     background-position: center;
   }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: griffy;
+  }
+
+.intro-text {
+    font-size: larger;
+    font-weight: 400;
+    font-family: Special Elite;
+  }
   
   .intro-section {
       background-image: url("../images/parchment.png");
