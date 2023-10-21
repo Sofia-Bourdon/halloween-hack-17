@@ -24,6 +24,11 @@
 
     </header>
     <main>
+        <h1 class="text-center">Detective Recording Table</h1>
+        <p class="text-center">As you uncover clues, record your findings in the table above to keep track of the 
+            eliminations and potential leads. Your success in this mini-game hinges on your ability 
+            to discern the truth from deception. Are you ready to make the critical choices that will 
+            bring you closer to solving the mystery?</p>
         <section id="game-board" class="row">
             <div id="character-sheet" class="col-sm p-3">
                 <table id="table" class="table table-striped text-center" onclick="highlightSelectedRowOnTable()">
@@ -134,6 +139,10 @@
         <div class="row">
         <section id="randompick" class="text-center row mt-3">
             <h2>Random Pick</h2>
+            <p>Carefully choose your options and make your selections wisely. Your goal is to guess the correct combination and solve the mystery.
+                After making your choices, click the "Submit" button to reveal the result.
+                If your choices are correct, they will be highlighted in green. If any of your selections are wrong, 
+                they will be highlighted in red to help you eliminate incorrect options and bring you one step closer to solving the mystery.</p>
             <div class="dropdown">
               <select name="character" id="character-dropdown">
                 <option value="Ringmaster Rick">Ringmaster Rick</option>
@@ -173,33 +182,64 @@
         
         <section id="clues-section" class="text-center row mt-3">   
             <h2>Clues</h2>
-            <div class="dropdown">
-                  <select name="clue-type-1" id="clue-type-1-dropdown">
+            <p>In this intriguing mini-game, you are presented with two choices to aid in your detective 
+                journey. Let's unravel the options:
+
+                1. "It Definitely Was Not" Clue:
+                
+                Choose this option, and you'll receive valuable information for eliminating suspects. 
+                After clicking "Submit," the game code will reveal three items : a character, a weapon, 
+                and a scene. These are not the correct choices for the mystery. 
+                They can be confidently eliminated as potential suspects. 
+                Use this clue to sharpen your focus and remove false leads.
+                
+                2. "It Might Have Been" Clue:
+                
+                Opt for this intriguing clue, and you'll receive a mixed bag of possibilities. 
+                After clicking "Submit," the game code will provide three items : one is the right answer,
+                and the other two are incorrect. It's your job to distinguish the true solution from the 
+                red herrings. Analyze the options carefully, apply your detective skills, 
+                and decide which one is correct.</p>
+
+            <div class="dropdown p-3">
+                <p><select name="clue-type-1" id="clue-type-1-dropdown">
                     <option value="It definitely was not">It definitely was not</option>
                     <option value="It might have been">It might have been</option>
                   </select>
-                  <input name="clue-character" id="clue-character-dropdown">
-                      
-                  <input name="clue-weapon" id="clue-weapon-dropdown">
-                
-                  <input name="clue-scene" id="clue-scene-dropdown">
+                  <input name="clue-character" id="clue-character-dropdown" placeholder="Character">
+                  with the    
+                  <input name="clue-weapon" id="clue-weapon-dropdown" placeholder="Weapon">
+                  in the
+                  <input name="clue-scene" id="clue-scene-dropdown" placeholder="Scene">
+                  <button id="Select">Select</button>
+                </p>
                 </div>
                 <br>
-                <div class="dropdown">
-                    <select name="clue-type-1" id="clue-type-1-dropdown">
-                      <option value="It definitely was not">It definitely was not</option>
-                      <option value="It might have been">It might have been</option>
-                    </select>
-                    <input name="clue-character" id="clue-character-dropdown">
-                      
-                    <input name="clue-weapon" id="clue-weapon-dropdown">
-                  
-                    <input name="clue-scene" id="clue-scene-dropdown">
-                     
-                  </div>
+                <p><select name="clue-type-1" id="clue-type-1-dropdown">
+                    <option value="It definitely was not">It definitely was not</option>
+                    <option value="It might have been">It might have been</option>
+                  </select>
+                  <input name="clue-character" id="clue-character-dropdown" placeholder="Character">
+                  with the    
+                  <input name="clue-weapon" id="clue-weapon-dropdown" placeholder="Weapon">
+                  in the
+                  <input name="clue-scene" id="clue-scene-dropdown" placeholder="Scene">
+                  <button id="Select">Select</button>
+                </p>
+                </div>
             </section> 
             <section id="questions-section" class="text-center row mt-3">
                 <h2>Questions</h2>
+                <p>Your goal is to ask the right questions and decipher the truth. 
+                    Here's how it works:
+                    Once you've crafted your question, press the "Submit" button to present it.
+                    The game will return a number that signifies how many of your choices are correct.
+                    The number you receive will be your guide:
+
+                    0: All of your choices are incorrect.
+                    1: Two of your choices are wrong.
+                    2: One of your choices is wrong.
+                    3: All three of your choices are correct!</p>
                 <div>   
                     <p>
                       Was it
@@ -235,7 +275,10 @@
                         <option value="Fortune Teller's Tent">Fortune Teller's Tent</option>
                         <option value="Haunted House">Haunted House</option></select
                       >?
+                      <button id="Question">Question</button>
+                      <input name="num-indicator" id="num-indicator" placeholder="num">
                     </p>
+                    
                 </div>
                 <div id="questions">
                     <p>
@@ -272,6 +315,8 @@
                         <option value="Fortune Teller's Tent">Fortune Teller's Tent</option>
                         <option value="Haunted House">Haunted House</option></select
                       >?
+                      <button id="Question">Question</button>
+                      <input name="num-indicator" id="num-indicator" placeholder="num">
                     </p>
                 </div>
             </section>
