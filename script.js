@@ -1,8 +1,8 @@
 // Define characters, weapons, and rooms
 
-const characters = ["Peter Venkman", "Ray Stantz", "Egon Spengler", "Winston Zeddemore", "Abby Yates", "Patty Tolan", "Jillian Holtzmann", "Erin Gilbert"];
-const weapons = ["Proton Pack", "PKE Meter", "Ghost Trap", "Ecto Goggles", "Neutrona Wand", "Spirit Box", "REM Pod", "Ghost Book"];
-const scenes = ["Games Room", "Kitchen", "Living Quarters", "Office", "Reception", "Attic", "Basement", "Sleeping Quarters"];
+const characters = ["Ringmaster Rick", "Freya the Fortune Teller", "Carl the Clown", "Magnificent Macy the Magician", "Felix the Ferris Wheel Operator", "Charlie the Cotton Candy Vendor", "Rita the Roller Coaster Operator", "Strongman Sam"];
+const weapons = ["Poisoned Cotton Candy", "Magic Wand", "Fire-Eating Torch", "Dagger from the House of Mirrors", "Tilt-a-Whirl Wrench", "Popcorn Kernel Bomb", "Juggling Pins", "Crystal Ball"];
+const scenes = ["Ferris Wheel", "House of Mirrors", "Carnival Midway", "Funhouse", "Cotton Candy Stand", "Roller Coaster", "Fortune Teller's Tent", "Haunted House"];
 let clickcounter = 0;
 
 // Function to randomly select an item from a list
