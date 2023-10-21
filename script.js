@@ -35,9 +35,9 @@ document.querySelectorAll('td.Action').forEach(cell => {
         cell.classList.remove('Red', 'Green');
 
         if (clickCount % 3 === 1) {
-            cell.classList.add('Red');
+            cell.style.color = 'red';
         } else if (clickCount % 3 === 2) {
-            cell.classList.add('Green');
+            cell.style.color = 'green';
         }
     });
 });
