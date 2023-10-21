@@ -163,28 +163,69 @@ function checkSelections() {
     const weaponDropdown = document.getElementById("weapon-dropdown");
     const sceneDropdown = document.getElementById("scene-dropdown");
 
-     // Get the selected values
-     const selectedCharacter = characterDropdown.value;
-     const selectedWeapon = weaponDropdown.value;
-     const selectedScene = sceneDropdown.value;
- 
+    // Get the selected values
+    const selectedCharacter = characterDropdown.value;
+    const selectedWeapon = weaponDropdown.value;
+    const selectedScene = sceneDropdown.value;
+
+    // reference the charactersheet
+    let characterSheet = document.getElementById("table");
+    let characters = characterSheet.getElementsByTagName("td");
+    // reference the weaponsheet
+    let weaponSheet = document.getElementById("table2");
+    let weapons = weaponSheet.getElementsByTagName("td");
+    // reference the scenesheet
+    let sceneSheet = document.getElementById("table3");
+    let scenes = sceneSheet.getElementsByTagName("td");
+
      // Check if selected items match randomItems or allOtherItems and apply highlighting
      if (randomItems.includes(selectedCharacter)) {
-        
         characterDropdown.style.backgroundColor = "green";
+        // iterate through the characters
+        for (let i = 0; i < characters.length; i++) {
+            // if the character matches the selected character, highlight it green
+            if (characters[i].innerHTML === selectedCharacter) {
+                characters[i].style.color = "green";
+            }}
      } else if (allOtherItems.includes(selectedCharacter)) {
-         characterDropdown.style.backgroundColor = "red";
+        characterDropdown.style.backgroundColor = "red";
+        // iterate through the characters
+        for (let i = 0; i < characters.length; i++) {
+            // if the character matches the selected character, highlight it red
+            if (characters[i].innerHTML === selectedCharacter) {
+                characters[i].style.color = "red";
+            }}
      }
  
      if (randomItems.includes(selectedWeapon)) {
          weaponDropdown.style.backgroundColor = "green";
+         // iterate through the weapons
+         for (let i = 0; i < weapons.length; i++) {
+            // if the weapon matches the selected weapon, highlight it green
+            if (weapons[i].innerHTML === selectedWeapon) {
+                weapons[i].style.color = "green";
+            }}
      } else if (allOtherItems.includes(selectedWeapon)) {
          weaponDropdown.style.backgroundColor = "red";
+        // iterate through the weapons
+        for (let i = 0; i < weapons.length; i++) {
+            // if the weapon matches the selected weapon, highlight it red
+            if (weapons[i].innerHTML === selectedWeapon) {
+                weapons[i].style.color = "red";
+            }}
      }
  
      if (randomItems.includes(selectedScene)) {
          sceneDropdown.style.backgroundColor = "green";
+            for (let i = 0; i < scenes.length; i++) {
+                if (scenes[i].innerHTML === selectedScene) {
+                    scenes[i].style.color = "green";
+                }}
      } else if (allOtherItems.includes(selectedScene)) {
          sceneDropdown.style.backgroundColor = "red";
+            for (let i = 0; i < scenes.length; i++) {
+                if (scenes[i].innerHTML === selectedScene) {
+                    scenes[i].style.color = "red";
+                }}
      }
  }
