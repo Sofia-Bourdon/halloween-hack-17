@@ -24,17 +24,22 @@ function highlightSelectedRowOnTable() {
         //bind click event to the row
         currentRow.onclick = function() {
             clickcounter++;
-            this.classList.add("selected");
             //highlight the selected row
             console.log("You selected:", this);
             if (clickcounter === 1) {
+                this.classList.add("DefinitelyNot");
                 this.children[0].style.color = "red";
             } else if (clickcounter === 2) {
+                this.classList.remove("DefinitelyNot");
+                this.classList.add("Possibly");
                 this.children[0].style.color = "blue";
             } else if (clickcounter === 3) {
+                this.classList.remove("Possibly");
+                this.classList.add("Definitely");
                 this.children[0].style.color = "green";
             } else {
-                this.classList.remove("selected");
+                this.classList.remove("Definitely");
+                this.classList.add("NotSelected");
                 this.children[0].style.color = "black";
                 clickcounter = 0;
             }
