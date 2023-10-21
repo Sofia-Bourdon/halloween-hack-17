@@ -53,7 +53,7 @@
                 <table id="table2" class="table table-striped text-center" onclick="highlightSelectedRowOnTable2()">
                     <thead class="thead-dark">
                         <tr>
-                            <th>Ghost Tool</th>
+                            <th>Weapons</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -88,7 +88,7 @@
                 <table id="table3" class="table table-striped text-center" onclick="highlightSelectedRowOnTable3()">
                     <thead class="thead-dark">
                         <tr>
-                            <th>Room</th>
+                            <th>Scene</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -120,7 +120,8 @@
                 </table>
             </div>
         </section>
-        <div class="text-center">
+        <div class="row">
+        <section id="randompick" class="text-center col-sm mt-3">
             <h2>Random Pick</h2>
             <div class="dropdown">
               <select name="character" id="character-dropdown">
@@ -143,7 +144,7 @@
                 <option value="REM Pod">REM Pod</option>
                 <option value="Ghost Book">Ghost Book</option>
               </select>
-              <select name="room" id="scene-dropdown">
+              <select name="scene" id="scene-dropdown">
                 <option value="Games Room">Games Room</option>
                 <option value="Kitchen">Kitchen</option>
                 <option value="Living Quarters">Living Quarters</option>
@@ -155,46 +156,40 @@
               </select>
               <button id="submit-button" onclick="checkSelections()">Submit</button>
             </div>
-            <div id="clues">
-                <h2>Clues</h2>
-                <div class="dropdown">
+            
+        
+        </section>   
+        
+        <section id="clues-section" class="text-center col-sm mt-3">   
+            <h2>Clues</h2>
+            <div class="dropdown">
                   <select name="clue-type-1" id="clue-type-1-dropdown">
                     <option value="It definitely was not">It definitely was not</option>
                     <option value="It might have been">It might have been</option>
                   </select>
-                  <select name="clue-character" id="clue-character-dropdown">
-                    <option value="Peter Venkman">Peter Venkman</option>
-                    <option value="Ray Stantz">Ray Stantz</option>
-                    <option value="Egon Spengler">Egon Spengler</option>
-                    <option value="Winston Zeddemore">Winston Zeddemore</option>
-                    <option value="Abby Yates">Abby Yates</option>
-                    <option value="Patty Tolan">Patty Tolan</option>
-                    <option value="Jillian Holtzmann">Jillian Holtzmann</option>
-                    <option value="Erin Gilbert">Erin Gilbert</option>
-                  </select>
-                  <select name="clue-tool" id="clue-tool-dropdown">
-                    <option value="Proton Pack">Proton Pack</option>
-                    <option value="PKE Meter">PKE Meter</option>
-                    <option value="Ghost Trap">Ghost Trap</option>
-                    <option value="Ecto Goggles">Ecto Goggles</option>
-                    <option value="Neutrona Wand">Neutrona Wand</option>
-                    <option value="Spirit Box">Spirit Box</option>
-                    <option value="REM Pod">REM Pod</option>
-                    <option value="Ghost Book">Ghost Book</option>
-                  </select>
-                  <select name="clue-room" id="clue-room-dropdown">
-                    <option value="Games Room">Games Room</option>
-                    <option value="Kitchen">Kitchen</option>
-                    <option value="Living Quarters">Living Quarters</option>
-                    <option value="Office">Office</option>
-                    <option value="Reception">Reception</option>
-                    <option value="Attic">Attic</option>
-                    <option value="Basement">Basement</option>
-                    <option value="Sleeping Quarters">Sleeping Quarters</option>
-                  </select>
+                  <input name="clue-character" id="clue-character-dropdown">
+                      
+                  <input name="clue-weapon" id="clue-weapon-dropdown">
+                
+                  <input name="clue-scene" id="clue-scene-dropdown">
                 </div>
-                <div id="questions">
-                    <h2>Questions</h2>
+                <br>
+                <div class="dropdown">
+                    <select name="clue-type-1" id="clue-type-1-dropdown">
+                      <option value="It definitely was not">It definitely was not</option>
+                      <option value="It might have been">It might have been</option>
+                    </select>
+                    <input name="clue-character" id="clue-character-dropdown">
+                      
+                    <input name="clue-weapon" id="clue-weapon-dropdown">
+                  
+                    <input name="clue-scene" id="clue-scene-dropdown">
+                     
+                  </div>
+            </section> 
+            <section id="questions-section" class="text-center col-sm mt-3">
+                <h2>Questions</h2>
+                <div>   
                     <p>
                       Was it
                       <select name="question-character" id="question-character-dropdown">
@@ -230,8 +225,46 @@
                         <option value="Sleeping Quarters">Sleeping Quarters</option></select
                       >?
                     </p>
-                  </div>
-            </div>
+                </div>
+                <div id="questions">
+                    <p>
+                      Was it
+                      <select name="question-character" id="question-character-dropdown">
+                        <option value="Peter Venkman">Peter Venkman</option>
+                        <option value="Ray Stantz">Ray Stantz</option>
+                        <option value="Egon Spengler">Egon Spengler</option>
+                        <option value="Winston Zeddemore">Winston Zeddemore</option>
+                        <option value="Abby Yates">Abby Yates</option>
+                        <option value="Patty Tolan">Patty Tolan</option>
+                        <option value="Jillian Holtzmann">Jillian Holtzmann</option>
+                        <option value="Erin Gilbert">Erin Gilbert</option>
+                      </select>
+                      with the
+                      <select name="question-tool" id="question-tool-dropdown">
+                        <option value="Proton Pack">Proton Pack</option>
+                        <option value="PKE Meter">PKE Meter</option>
+                        <option value="Ghost Trap">Ghost Trap</option>
+                        <option value="Ecto Goggles">Ecto Goggles</option>
+                        <option value="Neutrona Wand">Neutrona Wand</option>
+                        <option value="Spirit Box">Spirit Box</option>
+                        <option value="REM Pod">REM Pod</option>
+                        <option value="Ghost Book">Ghost Book</option>
+                      </select>
+                      in the
+                      <select name="question-room" id="question-room-dropdown">
+                        <option value="Games Room">Games Room</option>
+                        <option value="Kitchen">Kitchen</option>
+                        <option value="Living Quarters">Living Quarters</option>
+                        <option value="Office">Office</option>
+                        <option value="Reception">Reception</option>
+                        <option value="Attic">Attic</option>
+                        <option value="Basement">Basement</option>
+                        <option value="Sleeping Quarters">Sleeping Quarters</option></select
+                      >?
+                    </p>
+                </div>
+            </section>
+        </div>
     </main>
     <footer>
 
