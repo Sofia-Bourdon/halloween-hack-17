@@ -19,7 +19,7 @@
 .intro-text {
     font-size: larger;
     font-weight: 400;
-    font-family: Special Elite;
+    font-family: Special Elite, sans-serif;
   }
   
   .intro-section {
@@ -29,7 +29,8 @@
   
   .img-card {
       width: 30vh;
-      height: 30vh;
+      height: auto;
+      /* height: 30vh; */
   }
   
   .img-thumbnail {
