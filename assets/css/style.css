@@ -1,138 +1,161 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-  }
-  /*Add BG image*/
-  body {
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
+  box-sizing: border-box;
+  margin: 0;
+}
+/*Add BG image*/
+body {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 
 .index-body {
-    width: 100%;
-    height: 100%;
-    background-image: url("../images/background.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .carnival-body {
-    color: white;
-    width: 100%;
-    height: 100%;
-    background-image: url("../images/carnival-background.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+  color: white;
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/carnival-background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-  h1, h2, h3, h4, h5, h6 {
-    font-family: griffy;
-  }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: griffy;
+}
 
 .intro-text {
-    font-size: larger;
-    font-weight: 400;
-    font-family: Special Elite, sans-serif;
-  }
-  
-  .intro-section {
-      background-image: url("../images/parchment.png");
-      background-size: cover;
-  }
-  
-  .img-card {
-      width: 30vh;
-      height: auto;
-      /* height: 30vh; */
-  }
-  
-  .img-thumbnail {
-      display: flex;
-      flex-grow: 1;
-  }
-  
-  /* Style the game board */
-  #game-board {
-    background-color: #000;
-    color: #703838;
-    text-align: center;
-    padding: 20px;
-    font-family: "Arial", sans-serif;
-  }
-  
-  /* Style input prompts */
-  input[type="text"] {
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  /* Style the prompt for user input */
-  .prompt {
-    color: #fff;
-    font-size: 20px;
-    margin-bottom: 10px;
-    font-family: "Arial", sans-serif;
-  }
-  
-  /* Style the button */
-  #start-game {
-    background-color: #333;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    font-size: 18px;
-    cursor: pointer;
-  }
-  
-  #start-game:hover {
-    background-color: #555;
-  }
-  
-  /* Style the table */
-  table {
-    border-collapse: collapse;
-    width: 100%;
-  }
-  
-  th,
-  td {
-    border: 1px solid #000;
-    padding: 5px;
-    text-align: center;
-  }
-  
-  /* Style the action cells */
-  td.Action {
-    cursor: pointer;
-    background-color: #fff;
-  }
-  
-  td.Action.Red {
-    background-color: red;
-  }
-  
-  td.Action.Green {
-    background-color: green;
-  }
-  
-  
-  /* Style the submit button */
-  #submit-button {
-    background-color: #4caf50;
-    color: #fff; /* White text color */
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  
-  #submit-button:hover {
-    background-color: #45a049;
-  }
-  
+  font-size: larger;
+  font-weight: 400;
+  font-family: Special Elite, sans-serif;
+}
+
+.intro-section {
+  background-image: url("../images/parchment.png");
+  background-size: cover;
+}
+
+.img-card {
+  width: 30vh;
+  height: auto;
+  /* height: 30vh; */
+}
+
+.img-thumbnail {
+  display: flex;
+  flex-grow: 1;
+}
+
+/* Style the game board */
+#game-board {
+  background-color: #000;
+  color: #703838;
+  text-align: center;
+  padding: 20px;
+  font-family: "Arial", sans-serif;
+}
+
+/* Style input prompts */
+input[type="text"] {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Style the prompt for user input */
+.prompt {
+  color: #fff;
+  font-size: 20px;
+  margin-bottom: 10px;
+  font-family: "Arial", sans-serif;
+}
+
+/* Style the table */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  border: 1px solid #000;
+  padding: 5px;
+  text-align: center;
+}
+
+/* Style the action cells */
+td.Action {
+  cursor: pointer;
+  background-color: #fff;
+}
+
+td.Action.Red {
+  background-color: red;
+}
+
+td.Action.Green {
+  background-color: green;
+}
+
+/* Style the submit button */
+#submit-button {
+  background-color: #af4c4c;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#submit-button:hover {
+  background-color: #45a049;
+}
+
+/* Style the select button */
+#select-button {
+  background-color: #af4c4c;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#select-button:hover {
+  background-color: #45a049;
+}
+
+/* Style the question button */
+#question-button {
+  background-color: #af4c4c;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#question-button:hover {
+  background-color: #45a049;
+}
