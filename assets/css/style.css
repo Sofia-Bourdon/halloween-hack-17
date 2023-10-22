@@ -73,13 +73,16 @@ h6 {
 
 /* Style the game board */
 #game-board {
-  background-color: #000;
-  color: #703838;
+  background: 5px #350404;
   text-align: center;
   padding: 20px;
   font-family: "Arial", sans-serif;
   width: 80%;
   margin-left: 10%;
+}
+
+.user-pick {
+    background-color: #350404;
 }
 
 /* Style input prompts */
