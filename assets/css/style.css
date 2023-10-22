@@ -68,6 +68,8 @@ h6 {
   text-align: center;
   padding: 20px;
   font-family: "Arial", sans-serif;
+  width: 80%;
+  margin-left: 10%;
 }
 
 /* Style input prompts */

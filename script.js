@@ -1,4 +1,4 @@
-// Define characters, weapons, and rooms
+// Define characters, weapons, and scenes
 
 const characters = ["Ringmaster Rick", "Freya the Fortune Teller", "Carl the Clown", "Magnificent Macy the Magician", "Felix the Ferris Wheel Operator", "Charlie the Cotton Candy Vendor", "Rita the Roller Coaster Operator", "Strongman Sam"];
 const weapons = ["Poisoned Cotton Candy", "Magic Wand", "Fire-Eating Torch", "Dagger from the House of Mirrors", "Tilt-a-Whirl Wrench", "Popcorn Kernel Bomb", "Juggling Pins", "Crystal Ball"];
@@ -127,14 +127,14 @@ function highlightSelectedRowOnTable3() {
 
 // Function to highlight the mousedover location
 function changeOpacityOnHover() {
-    let scenes = document.getElementsByClassName("room");
+    let scenes = document.getElementsByClassName("scene");
 
-    for(room of rooms) {
-        room.addEventListener("mouseover", function() {
+    for(scene of scenes) {
+        scene.addEventListener("mouseover", function() {
             this.style.opacity = "1";
         });
 
-        room.addEventListener("mouseout", function() {
+        scene.addEventListener("mouseout", function() {
             this.style.opacity = "0.5";
         });
     }
@@ -229,3 +229,32 @@ function checkSelections() {
                 }}
      }
  }
+// Script for the question mini-game
+const questionButton = document.getElementById("question-button");
+const numIndicator = document.getElementById("num-indicator");
+
+// Get the correct answers from the randomItems array
+const correctCharacter = randomItems[0];
+const correctWeapon = randomItems[1];
+const correctScene = randomItems[2];
+
+// Add an event listener to the question button
+questionButton.addEventListener("click", () => {
+    const selectedCharacter = document.getElementById("question-character-dropdown").value;
+    const selectedWeapon = document.getElementById("question-weapon-dropdown").value;
+    const selectedScene = document.getElementById("question-scene-dropdown").value;
+
+    let correctChoices = 0;
+
+    if (selectedCharacter === correctCharacter) {
+        correctChoices++;
+    }
+    if (selectedWeapon === correctWeapon) {
+        correctChoices++;
+    }
+    if (selectedScene === correctScene) {
+        correctChoices++;
+    }
+
+    numIndicator.value = correctChoices; // Display the result
+});
