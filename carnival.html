@@ -12,7 +12,7 @@
     </head>
     <body class="carnival-body">
         <header class="text-center">
-            <h1 class="text-decoration-underline">The Carnival of Enigmas</h1>
+            <h1 class="text-warning text-decoration-underline">The Carnival of Enigmas</h1>
         </header>
         <main>
             <!--Blurb-->
@@ -20,7 +20,7 @@
                 <article class="row">
                     <h2 class="text-decoration-underline">The Case</h2>
                     <aside class="article col-sm">
-                       <p><strong>The Carnival rolled into town, setting up its whimsical world of wonders, merriment, and mysteries. 
+                       <p class="text"><strong>The Carnival rolled into town, setting up its whimsical world of wonders, merriment, and mysteries. 
                         Nestled beneath the starlit sky, the carnival was a kaleidoscope of rides, games, and amusements, attracting visitors from far and wide. But beneath the laughter and excitement , a dark cloud loomed. 
                         An unsettling murmur had spread like wildfire among the carnival-goers. Something sinister had occurred during the carnival's grand opening night. <br><br>
                         The Carnival Organizer Olivia, who had once been the charismatic heart of the show, has been found lifeless within the confines of the grand arena. The atmosphere shifted from one of joy to an unsettling 
@@ -43,7 +43,7 @@
 
             <!--Detective Table-->
             <section id="detective-table" class="text-center">
-                <h2 class="text-center text-decoration-underline">Detective Recording Table</h2>
+                <h2 class="text-warning text-decoration-underline">Detective Recording Table</h2>
                 <p><strong>
                     As you uncover clues, record your findings in the table above to keep track of the 
                     eliminations and potential leads. <br>
@@ -56,10 +56,10 @@
             <!--Game Board-->
             <section id="game-board" class="row text-center">
                 <div id="character-sheet" class="col-sm p-3">
-                    <table id="table" class="table table-dark text-center" onclick="highlightSelectedRowOnTable()">
-                        <thead class=>
+                    <table id="table" class="table text-center" onclick="highlightSelectedRowOnTable()">
+                        <thead>
                             <tr>
-                                <th scope="col">Character</th>
+                                <th scope="col"><h3 class="text-primary text-decoration-underline">Character</h3></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -91,10 +91,10 @@
                     </table>
                 </div>
                 <div id="weapon-sheet" class="col-sm p-3">
-                    <table id="table2" class="table table-dark text-center" onclick="highlightSelectedRowOnTable2()">
-                        <thead class="thead-dark">
+                    <table id="table2" class="table text-center" onclick="highlightSelectedRowOnTable2()">
+                        <thead>
                             <tr>
-                                <th>Weapons</th>
+                                <th><h3 class="text-primary text-decoration-underline">Weapons</h3></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -126,10 +126,10 @@
                     </table>
                 </div>
                 <div id="scene-sheet" class="col-sm p-3">
-                    <table id="table3" class="table table-dark text-center" onclick="highlightSelectedRowOnTable3()">
-                        <thead class="thead-dark">
+                    <table id="table3" class="table text-center" onclick="highlightSelectedRowOnTable3()">
+                        <thead>
                             <tr>
-                                <th>Scene</th>
+                                <th><h3 class="text-primary text-decoration-underline">Scene</h3></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -160,6 +160,9 @@
                         </tbody>
                     </table>
                 </div>
+                <div id="final-guess">
+                    <button class="btn btn-success">Final Guess</button>
+                </div>
             </section>
             <!--./game board-->
 
@@ -168,7 +171,7 @@
                 <!--Clues-->
                 <div class="row text-center">
                     <div id="clues-section" class="col-sm p-3">
-                        <h2 class="text-decoration-underline">Clues</h2>
+                        <h2 class="text-warning text-decoration-underline">Clues</h2>
                         <p><strong>In this intriguing mini-game, you are presented with two choices to aid in your detective 
                         journey. Let's unravel the options:</strong>
                         </p>
@@ -226,7 +229,7 @@
                     <!--/.clues-->
                     <!--Questions-->
                     <div id="questions-section" class="col-sm p-3">
-                        <h2 class="text-decoration-underline">Questions</h2>
+                        <h2 class="text-warning text-decoration-underline">Questions</h2>
                         <p><strong>Your goal is to ask the right questions and decipher the truth.<br>
                         Here's how it works: <br>
                         Once you've crafted your question, press the "Submit" button. <br>
@@ -334,7 +337,7 @@
             <!--Random Pick-->
             <section id="randompick" class="container text-center p-3">
 
-                <h3 class="text-decoration-underline">Random Pick</h3>
+                <h2 class="text-warning text-decoration-underline">Random Pick</h2>
                 <p>
                     <strong>Carefully choose your options and make your selections wisely. Your goal is to guess the correct combination and solve the mystery.
                     After making your choices, click the "Submit" button to reveal the result.
@@ -373,7 +376,7 @@
                         <option value="Fortune Teller's Tent">Fortune Teller's Tent</option>
                         <option value="Haunted House">Haunted House</option>
                     </select>
-                    <button id="submit-button" class="btn btn-warning m-3 onclick="checkSelections()">Submit</button>
+                    <button id="submit-button" class="btn btn-warning m-3" onclick="checkSelections()">Submit</button>
                 </div>                
             </section>
             <!--/.random pick-->
