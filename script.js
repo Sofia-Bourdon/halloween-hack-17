@@ -30,7 +30,9 @@ const scenes = [
   "Fortune Teller's Tent",
   "Haunted House",
 ];
-let clickcounter = 0;
+let clickcounter1 = 0;
+let clickcounter2 = 0;
+let clickcounter3 = 0;
 
 // Function to randomly select an item from a list
 function getRandomItem(list) {
@@ -43,44 +45,16 @@ function highlightSelectedRowOnTable() {
   let table = document.getElementById("table");
   //get refernce to the rows
   let rows = table.getElementsByTagName("tr");
-
-  //iterate through the rows
-  for (let i = 0; i < rows.length; i++) {
-    let currentRow = table.rows[i];
-
-    //bind click event to the row
-    currentRow.onclick = function () {
-      clickcounter++;
-      //highlight the selected row
-      console.log("You selected:", this);
-      if (clickcounter === 1) {
-        this.classList.add("DefinitelyNot");
-        this.children[0].style.color = "red";
-      } else if (clickcounter === 2) {
-        this.classList.remove("DefinitelyNot");
-        this.classList.add("Possibly");
-        this.children[0].style.color = "orange";
-      } else if (clickcounter === 3) {
-        this.classList.remove("Possibly");
-        this.classList.add("Definitely");
-        this.children[0].style.color = "green";
-      } else {
-        this.classList.remove("Definitely");
-        this.classList.add("NotSelected");
-        this.children[0].style.color = "white";
-        clickcounter = 0;
-      }
-      console.log(this.classList);
-      console.log(clickcounter);
-    };
-  }
-}
-
-function highlightSelectedRowOnTable2() {
+  
   // get refernce to the table
-  let table = document.getElementById("table2");
+  let table2 = document.getElementById("table2");
   //get refernce to the rows
-  let rows = table.getElementsByTagName("tr");
+  let rows2 = table2.getElementsByTagName("tr");
+
+  // get refernce to the table
+  let table3 = document.getElementById("table3");
+  //get refernce to the rows
+  let rows3 = table3.getElementsByTagName("tr");
 
   //iterate through the rows
   for (let i = 0; i < rows.length; i++) {
@@ -88,17 +62,17 @@ function highlightSelectedRowOnTable2() {
 
     //bind click event to the row
     currentRow.onclick = function () {
-      clickcounter++;
+      clickcounter1++;
       //highlight the selected row
       console.log("You selected:", this);
-      if (clickcounter === 1) {
+      if (clickcounter1 === 1) {
         this.classList.add("DefinitelyNot");
         this.children[0].style.color = "red";
-      } else if (clickcounter === 2) {
+      } else if (clickcounter1 === 2) {
         this.classList.remove("DefinitelyNot");
         this.classList.add("Possibly");
         this.children[0].style.color = "orange";
-      } else if (clickcounter === 3) {
+      } else if (clickcounter1 === 3) {
         this.classList.remove("Possibly");
         this.classList.add("Definitely");
         this.children[0].style.color = "green";
@@ -106,50 +80,69 @@ function highlightSelectedRowOnTable2() {
         this.classList.remove("Definitely");
         this.classList.add("NotSelected");
         this.children[0].style.color = "black";
-        clickcounter = 0;
+        clickcounter1 = 0;
       }
       console.log(this.classList);
-      console.log(clickcounter);
     };
   }
-}
 
-function highlightSelectedRowOnTable3() {
-  // get refernce to the table
-  let table = document.getElementById("table3");
-  //get refernce to the rows
-  let rows = table.getElementsByTagName("tr");
+    //iterate through the rows2
+    for (let i = 0; i < rows2.length; i++) {
+      let currentRow = table2.rows[i];
+  
+      //bind click event to the row
+      currentRow.onclick = function () {
+        clickcounter2++;
+        //highlight the selected row
+        console.log("You selected:", this);
+        if (clickcounter2 === 1) {
+          this.classList.add("DefinitelyNot");
+          this.children[0].style.color = "red";
+        } else if (clickcounter2 === 2) {
+          this.classList.remove("DefinitelyNot");
+          this.classList.add("Possibly");
+          this.children[0].style.color = "orange";
+        } else if (clickcounter2 === 3) {
+          this.classList.remove("Possibly");
+          this.classList.add("Definitely");
+          this.children[0].style.color = "green";
+        } else {
+          this.classList.remove("Definitely");
+          this.classList.add("NotSelected");
+          this.children[0].style.color = "black";
+          clickcounter2 = 0;
+        }
+      };
+    }
 
-  //iterate through the rows
-  for (let i = 0; i < rows.length; i++) {
-    let currentRow = table.rows[i];
-
-    //bind click event to the row
-    currentRow.onclick = function () {
-      clickcounter++;
-      //highlight the selected row
-      console.log("You selected:", this);
-      if (clickcounter === 1) {
-        this.classList.add("DefinitelyNot");
-        this.children[0].style.color = "red";
-      } else if (clickcounter === 2) {
-        this.classList.remove("DefinitelyNot");
-        this.classList.add("Possibly");
-        this.children[0].style.color = "orange";
-      } else if (clickcounter === 3) {
-        this.classList.remove("Possibly");
-        this.classList.add("Definitely");
-        this.children[0].style.color = "green";
-      } else {
-        this.classList.remove("Definitely");
-        this.classList.add("NotSelected");
-        this.children[0].style.color = "black";
-        clickcounter = 0;
-      }
-      console.log(this.classList);
-      console.log(clickcounter);
-    };
-  }
+    //iterate through the rows3
+    for (let i = 0; i < rows3.length; i++) {
+        let currentRow = table3.rows[i];
+    
+        //bind click event to the row
+        currentRow.onclick = function () {
+            clickcounter3++;
+            //highlight the selected row
+            console.log("You selected:", this);
+            if (clickcounter3 === 1) {
+            this.classList.add("DefinitelyNot");
+            this.children[0].style.color = "red";
+            } else if (clickcounter3 === 2) {
+            this.classList.remove("DefinitelyNot");
+            this.classList.add("Possibly");
+            this.children[0].style.color = "orange";
+            } else if (clickcounter3 === 3) {
+            this.classList.remove("Possibly");
+            this.classList.add("Definitely");
+            this.children[0].style.color = "green";
+            } else {
+            this.classList.remove("Definitely");
+            this.classList.add("NotSelected");
+            this.children[0].style.color = "black";
+            clickcounter3 = 0;
+            }
+        };
+    }
 }
 
 // Function to highlight the mousedover location
