@@ -45,7 +45,7 @@ h6 {
   font-family: Special Elite, sans-serif;
 }
 
-.intro-section {
+.intro-section, .blurb{
   background-image: url("../images/parchment.png");
   background-size: cover;
 }
