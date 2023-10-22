@@ -258,3 +258,56 @@ questionButton.addEventListener("click", () => {
 
     numIndicator.value = correctChoices; // Display the result
 });
+
+
+// Script for the Clues mini game
+// Add event listener to the select button
+const selectButton = document.getElementById("select-button");
+
+selectButton.addEventListener("click", () => {
+    // Get the selected clue type
+    const clueTypeDropdown = document.getElementById("clue-type-1-dropdown");
+    const selectedClueType = clueTypeDropdown.value;
+
+    // Get the selected character, weapon, and scene
+    const selectedCharacterInput = document.getElementById("clue-character-dropdown");
+    const selectedWeaponInput = document.getElementById("clue-weapon-dropdown");
+    const selectedSceneInput = document.getElementById("clue-scene-dropdown");
+
+    if (selectedClueType === "It definitely was not") {
+        // "It Definitely Was Not" Clue
+        // Generate three random items that are not the correct answer
+        const incorrectItems = generateIncorrectItems();
+        
+        // Set the values of the input fields
+        selectedCharacterInput.value = incorrectItems[0];
+        selectedWeaponInput.value = incorrectItems[1];
+        selectedSceneInput.value = incorrectItems[2];
+    } else if (selectedClueType === "It might have been") {
+        // "It Might Have Been" Clue
+        // Get the correct items from the randomItems list
+        const correctItems = randomItems;
+        // Generate two random incorrect items from the allOtherItems list
+        const incorrectItems = generateIncorrectItems(correctItems);
+        
+        // Set the values of the input fields
+        selectedCharacterInput.value = correctItems[0];
+        selectedWeaponInput.value = correctItems[1];
+        selectedSceneInput.value = correctItems[2];
+    }
+});
+
+// Function to generate random incorrect items from allOtherItems
+function generateIncorrectItems(correctItems) {
+    // Copy the allOtherItems array
+    const availableItems = [...allOtherItems];
+    const incorrectItems = [];
+
+    // Get two random items from availableItems
+    for (let i = 0; i < 2; i++) {
+        const randomIndex = Math.floor(Math.random() * availableItems.length);
+        incorrectItems.push(availableItems.splice(randomIndex, 1)[0]);
+    }
+
+    return incorrectItems;
+}
