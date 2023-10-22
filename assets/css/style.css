@@ -55,9 +55,13 @@ h6 {
   font-family: Special Elite, sans-serif;
 }
 
-.intro-section, .blurb{
+.intro-section {
   background-image: url("../images/parchment.png");
   background-size: cover;
+}
+
+#blurb {
+    background-color: #6337189e;
 }
 
 .img-card {
@@ -82,7 +86,7 @@ h6 {
 }
 
 .user-pick {
-    background-color: #350404;
+    background-color: #34010061;
 }
 
 /* Style input prompts */
