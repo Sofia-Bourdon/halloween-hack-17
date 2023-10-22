@@ -261,6 +261,7 @@ questionButton.addEventListener("click", () => {
 
 
 // Script for the Clues mini game
+
 // Add event listener to the select button
 const selectButton = document.getElementById("select-button");
 
@@ -274,40 +275,62 @@ selectButton.addEventListener("click", () => {
     const selectedWeaponInput = document.getElementById("clue-weapon-dropdown");
     const selectedSceneInput = document.getElementById("clue-scene-dropdown");
 
+    // Clear previous values
+    selectedCharacterInput.value = "";
+    selectedWeaponInput.value = "";
+    selectedSceneInput.value = "";
+
     if (selectedClueType === "It definitely was not") {
-        // "It Definitely Was Not" Clue
-        // Generate three random items that are not the correct answer
-        const incorrectItems = generateIncorrectItems();
+        // Generate three random incorrect items
+        const incorrectItems = getThreeRandomItems(allOtherItems);
         
-        // Set the values of the input fields
         selectedCharacterInput.value = incorrectItems[0];
         selectedWeaponInput.value = incorrectItems[1];
         selectedSceneInput.value = incorrectItems[2];
     } else if (selectedClueType === "It might have been") {
-        // "It Might Have Been" Clue
-        // Get the correct items from the randomItems list
-        const correctItems = randomItems;
-        // Generate two random incorrect items from the allOtherItems list
-        const incorrectItems = generateIncorrectItems(correctItems);
-        
-        // Set the values of the input fields
-        selectedCharacterInput.value = correctItems[0];
-        selectedWeaponInput.value = correctItems[1];
-        selectedSceneInput.value = correctItems[2];
+        // Get one correct item and two random incorrect items
+        const correctCharacter = getRandomItem(characters);
+        const correctWeapon = getRandomItem(weapons);
+        const correctScene = getRandomItem(scenes);
+
+        // Generate two random incorrect items for each category
+        const incorrectCharacters = getThreeRandomItems(characters.filter(c => c !== correctCharacter));
+        const incorrectWeapons = getThreeRandomItems(weapons.filter(w => w !== correctWeapon));
+        const incorrectScenes = getThreeRandomItems(scenes.filter(s => s !== correctScene));
+
+        // Combine the correct and incorrect items
+        const mixedCharacters = [correctCharacter, ...incorrectCharacters];
+        const mixedWeapons = [correctWeapon, ...incorrectWeapons];
+        const mixedScenes = [correctScene, ...incorrectScenes];
+
+        // Shuffle the mixed items
+        shuffleArray(mixedCharacters);
+        shuffleArray(mixedWeapons);
+        shuffleArray(mixedScenes);
+
+        selectedCharacterInput.value = mixedCharacters[0];
+        selectedWeaponInput.value = mixedWeapons[0];
+        selectedSceneInput.value = mixedScenes[0];
     }
 });
 
-// Function to generate random incorrect items from allOtherItems
-function generateIncorrectItems(correctItems) {
-    // Copy the allOtherItems array
-    const availableItems = [...allOtherItems];
-    const incorrectItems = [];
+// Function to get a random item from the provided list
+function getRandomItem(list) {
+    const randomIndex = Math.floor(Math.random() * list.length);
+    return list[randomIndex];
+}
 
-    // Get two random items from availableItems
-    for (let i = 0; i < 2; i++) {
-        const randomIndex = Math.floor(Math.random() * availableItems.length);
-        incorrectItems.push(availableItems.splice(randomIndex, 1)[0]);
+// Function to shuffle an array randomly
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
     }
+}
 
-    return incorrectItems;
+// Function to get three distinct random items from the provided list
+function getThreeRandomItems(list) {
+    const shuffledList = [...list];
+    shuffleArray(shuffledList);
+    return [shuffledList[0], shuffledList[1], shuffledList[2]];
 }
