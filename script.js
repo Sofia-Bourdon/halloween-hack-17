@@ -67,7 +67,7 @@ function highlightSelectedRowOnTable() {
       } else {
         this.classList.remove("Definitely");
         this.classList.add("NotSelected");
-        this.children[0].style.color = "black";
+        this.children[0].style.color = "white";
         clickcounter = 0;
       }
       console.log(this.classList);
