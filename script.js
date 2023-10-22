@@ -184,6 +184,7 @@ const allOtherItems = [
 console.log("Random Items:", randomItems);
 console.log("All Other Items:", allOtherItems);
 
+// Script for Random pick Mini Game
 // Function to highlight selected items based on matches
 function checkSelections() {
   const characterDropdown = document.getElementById("character-dropdown");
@@ -318,84 +319,70 @@ questionButton2.addEventListener("click", () => {
 });
 
 // Script for the Clues mini game
-
 // Add event listener to the select button
 const selectButton = document.getElementById("select-button1");
 
 selectButton.addEventListener("click", () => {
-  // Get the selected clue type
-  const clueTypeDropdown = document.getElementById("clue-type-1-dropdown");
-  const selectedClueType = clueTypeDropdown.value;
+    // Get the selected clue type
+    const clueTypeRandom = document.getElementById("clue-type-1-random");
+    const selectedClueType = clueTypeRandom.value;
 
-  // Get the selected character, weapon, and scene
-  const selectedCharacterInput = document.getElementById(
-    "clue-character-dropdown"
-  );
-  const selectedWeaponInput = document.getElementById("clue-weapon-dropdown");
-  const selectedSceneInput = document.getElementById("clue-scene-dropdown");
+    // Get the selected character, weapon, and scene
+    const selectedCharacterInput = document.getElementById("clue-character-random1");
+    const selectedWeaponInput = document.getElementById("clue-weapon-random1");
+    const selectedSceneInput = document.getElementById("clue-scene-random1");
 
-  // Clear previous values
-  selectedCharacterInput.value = "";
-  selectedWeaponInput.value = "";
-  selectedSceneInput.value = "";
+    if (selectedClueType === "It definitely was not") {
+        // Generate three random incorrect items
+        const incorrectCharacter = getRandomIncorrectItem(characters);
+        const incorrectWeapon = getRandomIncorrectItem(weapons);
+        const incorrectScene = getRandomIncorrectItem(scenes);
+        
+        selectedCharacterInput.value = incorrectCharacter;
+        selectedWeaponInput.value = incorrectWeapon;
+        selectedSceneInput.value = incorrectScene;
+    } else if (selectedClueType === "It might have been") {
+         // Get one correct item and two random incorrect items
+         const correctCharacter = getRandomItem(characters);
+         const correctWeapon = getRandomItem(weapons);
+         const correctScene = getRandomItem(scenes);
 
-  if (selectedClueType === "It definitely was not") {
-    // Generate three random incorrect items
-    const incorrectItems = getThreeRandomItems(allOtherItems);
-
-    selectedCharacterInput.value = incorrectItems[0];
-    selectedWeaponInput.value = incorrectItems[1];
-    selectedSceneInput.value = incorrectItems[2];
-  } else if (selectedClueType === "It might have been") {
-    // Get one correct item and two random incorrect items
-    const correctCharacter = getRandomItem(characters);
-    const correctWeapon = getRandomItem(weapons);
-    const correctScene = getRandomItem(scenes);
-
-    // Generate two random incorrect items for each category
-    const incorrectCharacters = getThreeRandomItems(
-      characters.filter((c) => c !== correctCharacter)
-    );
-    const incorrectWeapons = getThreeRandomItems(
-      weapons.filter((w) => w !== correctWeapon)
-    );
-    const incorrectScenes = getThreeRandomItems(
-      scenes.filter((s) => s !== correctScene)
-    );
-
-    // Combine the correct and incorrect items
-    const mixedCharacters = [correctCharacter, ...incorrectCharacters];
-    const mixedWeapons = [correctWeapon, ...incorrectWeapons];
-    const mixedScenes = [correctScene, ...incorrectScenes];
-
-    // Shuffle the mixed items
-    shuffleArray(mixedCharacters);
-    shuffleArray(mixedWeapons);
-    shuffleArray(mixedScenes);
-
-    selectedCharacterInput.value = mixedCharacters[0];
-    selectedWeaponInput.value = mixedWeapons[0];
-    selectedSceneInput.value = mixedScenes[0];
-  }
-});
-
-// Function to get a random item from the provided list
+         // Get two random incorrect items for each category
+        const incorrectCharacters = getTwoRandomIncorrectItems(characters, correctCharacter);
+        const incorrectWeapons = getTwoRandomIncorrectItems(weapons, correctWeapon);
+        const incorrectScenes = getTwoRandomIncorrectItems(scenes, correctScene);
+ 
+        selectedCharacterInput.value = correctCharacter;
+        selectedWeaponInput.value = incorrectWeapons[0];
+        selectedSceneInput.value = incorrectScenes[0];
+     }
+ });
+ 
+ // Function to get a random item from the provided list
 function getRandomItem(list) {
   const randomIndex = Math.floor(Math.random() * list.length);
   return list[randomIndex];
 }
 
-// Function to shuffle an array randomly
-function shuffleArray(array) {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  }
+// Function to get a random incorrect item from the list
+function getRandomIncorrectItem(list) {
+  const incorrectItems = list.filter(item => !characters.includes(item) && !weapons.includes(item) && !scenes.includes(item));
+  return getRandomItem(incorrectItems);
 }
 
-// Function to get three distinct random items from the provided list
-function getThreeRandomItems(list) {
-  const shuffledList = [...list];
-  shuffleArray(shuffledList);
-  return [shuffledList[0], shuffledList[1], shuffledList[2]];
+// Function to get two random incorrect items from the list
+function getTwoRandomIncorrectItems(list, correctItem) {
+  const incorrectItems = list.filter(item => item !== correctItem);
+  const shuffledIncorrectItems = shuffleArray(incorrectItems);
+  return [shuffledIncorrectItems[0], shuffledIncorrectItems[1]];
+}
+
+// Function to shuffle an array randomly
+function shuffleArray(array) {
+  const shuffledArray = [...array];
+  for (let i = shuffledArray.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
+  }
+  return shuffledArray;
 }
