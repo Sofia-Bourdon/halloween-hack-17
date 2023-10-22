@@ -54,11 +54,48 @@ This innovative feature allows you to keep track of your findings, theories, and
 ## How to Start
 To embark on your murder mystery adventure:
 
-Clone or download this repository.
-Open the "index.html" file in your web browser to launch the game.
+Choose which adventure you wish to try first. Click on the image for that adventure.
 Use your detective skills to solve the case.
-Get Ready to Investigate!
 Get ready to unleash your inner detective and uncover the secrets behind the murder. Are you up for the challenge? Put on your detective hat and get ready to enjoy this captivating "Cluedo" style game experience. Happy sleuthing!
+
+There are three mini-games you can play that gives you clues as to who committed the murder, what weapon was used and the location the murder occured.
+
+* Mini Game 1 - Clues: 
+
+In this intriguing mini-game, you are presented with two choices to aid in your detective journey. You have three chances to play this game.
+Let's unravel the options:
+- "It Definitely Was Not" Clue:
+Choose this option, and you'll receive valuable information for eliminating suspects. 
+After clicking "Submit," the game code will reveal three items : a character, a weapon, 
+and a scene. These are not the correct choices for the mystery. 
+They can be confidently eliminated as potential suspects. 
+Use this clue to sharpen your focus and remove false leads.
+                        
+- "It Might Have Been" Clue:
+Opt for this intriguing clue, and you'll receive a mixed bag of possibilities. 
+After clicking "Submit," the game code will provide three items : one is the right answer,
+and the other two are incorrect. It's your job to distinguish the true solution from the 
+red herrings. Analyze the options carefully, apply your detective skills, 
+and decide which one is correct.
+
+* Mini Game 2 - Questions:
+Your goal is to ask the right questions and decipher the truth. You have three opportunities to play this game.
+Here's how it works: 
+Once you've crafted your question, press the "Question" button. 
+The game will return a number that signifies how many of your choices are correct. 
+The number you receive will be your guide:
+
+0: All of your choices are incorrect.
+1: Two of your choices are incorrect.
+2: One of your choices is incorrect.
+3: All three of your choices are correct!
+
+* Mini-Game 3 - Random Pick:
+
+Carefully choose your options and make your selections wisely. Your goal is to guess the correct combination and solve the mystery. You have two opportunities to play this game.
+After making your choices, click the "Submit" button to reveal the result.
+If your choices are correct, they will be highlighted in green. If any of your selections are wrong, 
+they will be highlighted in red to help you eliminate incorrect options and bring you one step closer to solving the mystery.
 
 ## Goal
 The goal section provides a concise summary of the main objective or purpose of the project or software described in this README. It addresses the following aspects:
