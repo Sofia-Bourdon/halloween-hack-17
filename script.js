@@ -72,7 +72,7 @@ function highlightSelectedRowOnTable() {
         this.classList.remove("DefinitelyNot");
         this.classList.add("Possibly");
         this.children[0].style.color = "orange";
-      } else if (clickcounter1 === 3) {
+      } else if (clickcounter1 === 3 && !this.classList.contains("Definitely")) {
         this.classList.remove("Possibly");
         this.classList.add("Definitely");
         this.children[0].style.color = "green";
@@ -286,14 +286,14 @@ function checkSelections() {
 
 // Script for the question mini-game
 const questionButton1 = document.getElementById("question-button1");
-const questionButton2 = document.getElementById("question-button2");
 const numIndicator1 = document.getElementById("num-indicator1");
-const numIndicator2 = document.getElementById("num-indicator2");
 
 // Get the correct answers from the randomItems array
 const correctCharacter = randomItems[0];
 const correctWeapon = randomItems[1];
 const correctScene = randomItems[2];
+// Set the number of chances
+let chances = 3;
 
 // Add an event listener to the question button 1
 questionButton1.addEventListener("click", () => {
@@ -302,41 +302,28 @@ questionButton1.addEventListener("click", () => {
     const selectedScene = document.getElementById("question-scene-dropdown1").value;
 
     let correctChoices1 = 0;
-
-    if (selectedCharacter === correctCharacter) {
-        correctChoices1++;
-    }
-    if (selectedWeapon === correctWeapon) {
-        correctChoices1++;
-    }
-    if (selectedScene === correctScene) {
-        correctChoices1++;
-    }
+    // when the button is clicked, decrement the number of chances
+    chances--;
+        if (selectedCharacter === correctCharacter) {
+            correctChoices1++;
+        }
+        if (selectedWeapon === correctWeapon) {
+            correctChoices1++;
+        }
+        if (selectedScene === correctScene) {
+            correctChoices1++;
+        }
 
     numIndicator1.value = correctChoices1.toString(); // Display the result
+
+    // Disable the button if the user is out of chances
+    if (chances === 0) {
+        alert("You are out of chances!");
+        questionButton1.disabled = true;
+    }
+    console.log(chances);
 });
 
-// Add an event listener to the question button 2
-questionButton2.addEventListener("click", () => {
-    const selectedCharacter = document.getElementById("question-character-dropdown2").value;
-    const selectedWeapon = document.getElementById("question-weapon-dropdown2").value;
-    const selectedScene = document.getElementById("question-scene-dropdown2").value;
-
-    let correctChoices2 = 0;
-
-    if (selectedCharacter === correctCharacter) {
-        correctChoices2++;
-    }
-    if (selectedWeapon === correctWeapon) {
-        correctChoices2++;
-    }
-    if (selectedScene === correctScene) {
-        correctChoices2++;
-    }
-
-    numIndicator2.value = correctChoices2.toString(); // Display the result
-
-});
 
 // Script for the Clues mini game
 
