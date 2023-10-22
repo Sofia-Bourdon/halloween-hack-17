@@ -67,7 +67,7 @@ function highlightSelectedRowOnTable() {
       } else {
         this.classList.remove("Definitely");
         this.classList.add("NotSelected");
-        this.children[0].style.color = "black";
+        this.children[0].style.color = "white";
         clickcounter = 0;
       }
       console.log(this.classList);
@@ -277,88 +277,123 @@ const correctScene = randomItems[2];
 
 // Add an event listener to the question button 1
 questionButton1.addEventListener("click", () => {
-    const selectedCharacter = document.getElementById("question-character-dropdown1").value;
-    const selectedWeapon = document.getElementById("question-weapon-dropdown1").value;
-    const selectedScene = document.getElementById("question-scene-dropdown1").value;
+  const selectedCharacter = document.getElementById(
+    "question-character-dropdown1"
+  ).value;
+  const selectedWeapon = document.getElementById(
+    "question-weapon-dropdown1"
+  ).value;
+  const selectedScene = document.getElementById(
+    "question-scene-dropdown1"
+  ).value;
 
-    let correctChoices1 = 0;
+  let correctChoices1 = 0;
 
-    if (selectedCharacter === correctCharacter) {
-        correctChoices1++;
-    }
-    if (selectedWeapon === correctWeapon) {
-        correctChoices1++;
-    }
-    if (selectedScene === correctScene) {
-        correctChoices1++;
-    }
+  if (selectedCharacter === correctCharacter) {
+    correctChoices1++;
+  }
+  if (selectedWeapon === correctWeapon) {
+    correctChoices1++;
+  }
+  if (selectedScene === correctScene) {
+    correctChoices1++;
+  }
 
-    numIndicator1.value = correctChoices1.toString(); // Display the result
+  numIndicator1.value = correctChoices1.toString(); // Display the result
 });
 
 // Add an event listener to the question button 2
 questionButton2.addEventListener("click", () => {
-    const selectedCharacter = document.getElementById("question-character-dropdown2").value;
-    const selectedWeapon = document.getElementById("question-weapon-dropdown2").value;
-    const selectedScene = document.getElementById("question-scene-dropdown2").value;
+  const selectedCharacter = document.getElementById(
+    "question-character-dropdown2"
+  ).value;
+  const selectedWeapon = document.getElementById(
+    "question-weapon-dropdown2"
+  ).value;
+  const selectedScene = document.getElementById(
+    "question-scene-dropdown2"
+  ).value;
 
-    let correctChoices2 = 0;
+  let correctChoices2 = 0;
 
-    if (selectedCharacter === correctCharacter) {
-        correctChoices2++;
-    }
-    if (selectedWeapon === correctWeapon) {
-        correctChoices2++;
-    }
-    if (selectedScene === correctScene) {
-        correctChoices2++;
-    }
+  if (selectedCharacter === correctCharacter) {
+    correctChoices2++;
+  }
+  if (selectedWeapon === correctWeapon) {
+    correctChoices2++;
+  }
+  if (selectedScene === correctScene) {
+    correctChoices2++;
+  }
 
-    numIndicator2.value = correctChoices2.toString(); // Display the result
-
+  numIndicator2.value = correctChoices2.toString(); // Display the result
 });
 
 // Script for the Clues mini game
 // Add event listener to the select button
-const selectButton = document.getElementById("select-button1");
+const selectButton1 = document.getElementById("select-button1");
 
-selectButton.addEventListener("click", () => {
-    // Get the selected clue type
-    const clueTypeRandom = document.getElementById("clue-type-1-random");
-    const selectedClueType = clueTypeRandom.value;
+selectButton1.addEventListener("click", () => {
+  // Get the selected clue type
+  const clueTypeRandom1 = document.getElementById("clue-type-1-random");
+  const selectedClueType1 = clueTypeRandom1.value;
+  // Get the selected character, weapon, and scene
+  const selectedCharacter1Input = document.getElementById(
+    "clue-character-random1"
+  );
+  const selectedWeapon1Input = document.getElementById("clue-weapon-random1");
+  const selectedScene1Input = document.getElementById("clue-scene-random1");
 
-    // Get the selected character, weapon, and scene
-    const selectedCharacterInput = document.getElementById("clue-character-random1");
-    const selectedWeaponInput = document.getElementById("clue-weapon-random1");
-    const selectedSceneInput = document.getElementById("clue-scene-random1");
+  if (selectedClueType1 === "It definitely was not") {
+    // Generate three random incorrect items
+    const incorrectCharacterItems = allOtherItems.slice(0, 6);
+    const incorrectWeaponItems = allOtherItems.slice(7, 13);
+    const incorrectSceneItems = allOtherItems.slice(14, 20);
 
-    if (selectedClueType === "It definitely was not") {
-        // Generate three random incorrect items
-        const incorrectCharacter = getRandomIncorrectItem(characters);
-        const incorrectWeapon = getRandomIncorrectItem(weapons);
-        const incorrectScene = getRandomIncorrectItem(scenes);
-        
-        selectedCharacterInput.value = incorrectCharacter;
-        selectedWeaponInput.value = incorrectWeapon;
-        selectedSceneInput.value = incorrectScene;
-    } else if (selectedClueType === "It might have been") {
-         // Get one correct item and two random incorrect items
-         const correctCharacter = getRandomItem(characters);
-         const correctWeapon = getRandomItem(weapons);
-         const correctScene = getRandomItem(scenes);
+    const incorrectCharacter1 = getRandomItem(incorrectCharacterItems);
+    const incorrectWeapon1 = getRandomItem(incorrectWeaponItems);
+    const incorrectScene1 = getRandomItem(incorrectSceneItems);
 
-         // Get two random incorrect items for each category
-        const incorrectCharacters = getTwoRandomIncorrectItems(characters, correctCharacter);
-        const incorrectWeapons = getTwoRandomIncorrectItems(weapons, correctWeapon);
-        const incorrectScenes = getTwoRandomIncorrectItems(scenes, correctScene);
- 
-        selectedCharacterInput.value = correctCharacter;
-        selectedWeaponInput.value = incorrectWeapons[0];
-        selectedSceneInput.value = incorrectScenes[0];
-     }
- });
- 
- // Function to get a random item from the provided list
+    selectedCharacter1Input.value = incorrectCharacter1;
+    selectedWeapon1Input.value = incorrectWeapon1;
+    selectedScene1Input.value = incorrectScene1;
+  } else if (selectedClueType1 === "It might have been") {
+    // Get one correct item and two random incorrect items
+    const correctCharacter1 = randomItems[0]; 
+    const correctWeapon1 = randomItems[1]; 
+    const correctScene1 = randomItems[2]; 
+
+    const randomIndex = Math.floor(Math.random() * 3);
+
+    // Get the appropriate item lists based on the random index
+    let characterItems, weaponItems, sceneItems;
+
+    switch (randomIndex) {
+      case 0: // Randomly selected a character
+        characterItems = [correctCharacter1, getRandomItem(randomItems)];
+        weaponItems = getTwoRandomIncorrectItems(weapons, correctWeapon1);
+        sceneItems = getTwoRandomIncorrectItems(scenes, correctScene1);
+        break;
+      case 1: // Randomly selected a weapon
+        characterItems = getTwoRandomIncorrectItems(characters,correctCharacter1);
+        weaponItems = [correctWeapon1, getRandomItem(randomItems)];
+        sceneItems = getTwoRandomIncorrectItems(scenes, correctScene1);
+        break;
+      case 2: // Randomly selected a scene
+        characterItems = getTwoRandomIncorrectItems(characters,correctCharacter1);
+        weaponItems = getTwoRandomIncorrectItems(weapons, correctWeapon1);
+        sceneItems = [correctScene1, getRandomItem(randomItems)];
+        break;
+    }
+
+    // Assign values to input elements
+    selectedCharacter1Input.value = characterItems[0];
+    selectedWeapon1Input.value = weaponItems[0];
+    selectedScene1Input.value = sceneItems[0];
+  }
+});
+
+// Function to get a random item from the provided list
 function getRandomItem(list) {
   const randomIndex = Math.floor(Math.random() * list.length);
   return list[randomIndex];
@@ -366,13 +401,18 @@ function getRandomItem(list) {
 
 // Function to get a random incorrect item from the list
 function getRandomIncorrectItem(list) {
-  const incorrectItems = list.filter(item => !characters.includes(item) && !weapons.includes(item) && !scenes.includes(item));
+  const incorrectItems = list.filter(
+    (item) =>
+      !characters.includes(item) &&
+      !weapons.includes(item) &&
+      !scenes.includes(item)
+  );
   return getRandomItem(incorrectItems);
 }
 
 // Function to get two random incorrect items from the list
 function getTwoRandomIncorrectItems(list, correctItem) {
-  const incorrectItems = list.filter(item => item !== correctItem);
+  const incorrectItems = list.filter((item) => item !== correctItem);
   const shuffledIncorrectItems = shuffleArray(incorrectItems);
   return [shuffledIncorrectItems[0], shuffledIncorrectItems[1]];
 }
@@ -381,8 +421,8 @@ function getTwoRandomIncorrectItems(list, correctItem) {
 function shuffleArray(array) {
   const shuffledArray = [...array];
   for (let i = shuffledArray.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
   }
   return shuffledArray;
 }
