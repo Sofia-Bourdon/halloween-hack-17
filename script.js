@@ -145,6 +145,34 @@ function highlightSelectedRowOnTable() {
     }
 }
 
+function clearSelections() {
+    table = document.getElementById("table");
+    table2 = document.getElementById("table2");
+    table3 = document.getElementById("table3");
+    rows = table.getElementsByTagName("tr");
+    for (let i = 0; i < table.rows.length; i++) {
+        table.rows[i].classList.remove("DefinitelyNot");
+        table.rows[i].classList.remove("Possibly");
+        table.rows[i].classList.remove("Definitely");
+        table.rows[i].classList.add("NotSelected");
+        table.rows[i].children[0].style.color = "black";
+    }
+    for (let i = 0; i < table2.rows.length; i++) {
+        table2.rows[i].classList.remove("DefinitelyNot");
+        table2.rows[i].classList.remove("Possibly");
+        table2.rows[i].classList.remove("Definitely");
+        table2.rows[i].classList.add("NotSelected");
+        table2.rows[i].children[0].style.color = "black";
+    }
+    for (let i = 0; i < table3.rows.length; i++) {
+        table3.rows[i].classList.remove("DefinitelyNot");
+        table3.rows[i].classList.remove("Possibly");
+        table3.rows[i].classList.remove("Definitely");
+        table3.rows[i].classList.add("NotSelected");
+        table3.rows[i].children[0].style.color = "black";
+    }
+}
+
 // Function to highlight the mousedover location
 function changeOpacityOnHover() {
   let scenes = document.getElementsByClassName("scene");
