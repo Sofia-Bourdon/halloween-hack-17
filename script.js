@@ -32,7 +32,7 @@ function highlightSelectedRowOnTable() {
             } else if (clickcounter === 2) {
                 this.classList.remove("DefinitelyNot");
                 this.classList.add("Possibly");
-                this.children[0].style.color = "blue";
+                this.children[0].style.color = "orange";
             } else if (clickcounter === 3) {
                 this.classList.remove("Possibly");
                 this.classList.add("Definitely");
@@ -70,7 +70,7 @@ function highlightSelectedRowOnTable2() {
             } else if (clickcounter === 2) {
                 this.classList.remove("DefinitelyNot");
                 this.classList.add("Possibly");
-                this.children[0].style.color = "blue";
+                this.children[0].style.color = "orange";
             } else if (clickcounter === 3) {
                 this.classList.remove("Possibly");
                 this.classList.add("Definitely");
@@ -108,7 +108,7 @@ function highlightSelectedRowOnTable3() {
             } else if (clickcounter === 2) {
                 this.classList.remove("DefinitelyNot");
                 this.classList.add("Possibly");
-                this.children[0].style.color = "blue";
+                this.children[0].style.color = "orange";
             } else if (clickcounter === 3) {
                 this.classList.remove("Possibly");
                 this.classList.add("Definitely");
