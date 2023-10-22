@@ -131,7 +131,7 @@ td.Action.Green {
 }
 
 /* Style the select button */
-#select-button {
+#select-button1 {
   background-color: #af4c4c;
   color: #fff;
   border: none;
@@ -142,12 +142,27 @@ td.Action.Green {
   border-radius: 5px;
 }
 
-#select-button:hover {
+#select-button1:hover {
+  background-color: #45a049;
+}
+
+#select-button2 {
+  background-color: #af4c4c;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#select-button2:hover {
   background-color: #45a049;
 }
 
 /* Style the question button */
-#question-button {
+#question-button1 {
   background-color: #af4c4c;
   color: #fff;
   border: none;
@@ -158,6 +173,21 @@ td.Action.Green {
   border-radius: 5px;
 }
 
-#question-button:hover {
+#question-button1:hover {
+  background-color: #45a049;
+}
+
+#question-button2 {
+  background-color: #af4c4c;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#question-button2:hover {
   background-color: #45a049;
 }
