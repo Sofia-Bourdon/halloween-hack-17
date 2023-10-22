@@ -31,8 +31,8 @@
         <main>
             <h2 class="text-center">Detective Recording Table</h2>
             <p class="text-center"><strong>As you uncover clues, record your findings in the table above to keep track of the 
-                eliminations and potential leads. Your success in this mini-game hinges on your ability 
-                to discern the truth from deception. 
+                eliminations and potential leads.</strong></p> 
+            <p class="text-center"><strong>Your success in the mini-games below hinges on your ability to discern the truth from deception.</strong></p> 
             <p class="text-center"><strong>Highlight the item "RED" to eliminate as a suspect. Highlight "Orange" to mark as suspicious and Highlight as "Green" to lock in your conclusions.</strong></p>
             <section id="game-board" class="row">
                 <div id="character-sheet" class="col-sm p-3">
@@ -142,50 +142,7 @@
                 </div>
             </section>
             <div class="row">
-            <section id="randompick" class="text-center row mt-3">
-                <h3>Random Pick</h3>
-                <p><strong>Carefully choose your options and make your selections wisely. Your goal is to guess the correct combination and solve the mystery.
-                    After making your choices, click the "Submit" button to reveal the result.
-                    If your choices are correct, they will be highlighted in green. If any of your selections are wrong, 
-                    they will be highlighted in red to help you eliminate incorrect options and bring you one step closer to solving the mystery.</strong></p>
-                <div class="dropdown">
-                  <select name="character" id="character-dropdown" class="text-center">
-                    <option value="Ringmaster Rick">Ringmaster Rick</option>
-                    <option value="Freya the Fortune Teller">Freya the Fortune Teller</option>
-                    <option value="Carl the Clown">Carl the Clown</option>
-                    <option value="Magnificent Macy the Magician">Magnificent Macy the Magician</option>
-                    <option value="Felix the Ferris Wheel Operator">Felix the Ferris Wheel Operator</option>
-                    <option value="Charlie the Cotton Candy Vendor">Charlie the Cotton Candy Vendor</option>
-                    <option value="Rita the Roller Coaster Operator">Rita the Roller Coaster Operator</option>
-                    <option value="Strongman Sam">Strongman Sam</option>
-                  </select>
-                  <select name="weapon" id="weapon-dropdown" class="text-center">
-                    <option value="Poisoned Cotton Candy">Poisoned Cotton Candy</option>
-                    <option value="Magic Wand">Magic Wand</option>
-                    <option value="Fire-Eating Torch">Fire-Eating Torch</option>
-                    <option value="Dagger from the House of Mirrors">Dagger from the House of Mirrors</option>
-                    <option value="Tilt-a-Whirl Wrench">Tilt-a-Whirl Wrench</option>
-                    <option value="Popcorn Kernel Bomb">Popcorn Kernel Bomb</option>
-                    <option value="Juggling Pins">Juggling Pins</option>
-                    <option value="Crystal Ball">Crystal Ball</option>
-                  </select>
-                  <select name="scene" id="scene-dropdown" class="text-center">
-                    <option value="Ferris Wheel">Ferris Wheel</option>
-                    <option value="House of Mirrors">House of Mirrors</option>
-                    <option value="Carnival Midway">Carnival Midway</option>
-                    <option value="Funhouse">Funhouse</option>
-                    <option value="Cotton Candy Stand">Cotton Candy Stand</option>
-                    <option value="Roller Coaster">Roller Coaster</option>
-                    <option value="Fortune Teller's Tent">Fortune Teller's Tent</option>
-                    <option value="Haunted House">Haunted House</option>
-                  </select>
-                  <button id="submit-button" onclick="checkSelections()">Submit</button>
-                </div>
-                
-            
-            </section>   
-            
-            <section id="clues-section" class="text-center row mt-3">   
+            <section id="clues-section" class="text-center col mt-3">   
                 <h3>Clues</h3>
                 <p><strong>In this intriguing mini-game, you are presented with two choices to aid in your detective 
                     journey. Let's unravel the options:</strong></p>
@@ -233,18 +190,18 @@
                     </p>
                     </div>
                 </section> 
-                <section id="questions-section" class="text-center row mt-3">
+                <section id="questions-section" class="text-center col mt-3">
                     <h2>Questions</h2>
-                    <p>Your goal is to ask the right questions and decipher the truth. 
-                        Here's how it works:
-                        Once you've crafted your question, press the "Submit" button to present it.
-                        The game will return a number that signifies how many of your choices are correct.
-                        The number you receive will be your guide:
+                    <p>Your goal is to ask the right questions and decipher the truth.</p> 
+                    <p>Here's how it works:</p>
+                        <p>Once you've crafted your question, press the "Submit" button.</p>
+                        <p>The game will return a number that signifies how many of your choices are correct.</p>
+                        <p>The number you receive will be your guide:</p>
     
-                        0: All of your choices are incorrect.
-                        1: Two of your choices are wrong.
-                        2: One of your choices is wrong.
-                        3: All three of your choices are correct!</p>
+                        <p>0: All of your choices are incorrect.</p>
+                        <p>1: Two of your choices are incorrect.</p>
+                        <p>2: One of your choices is incorrect.</p>
+                        <p>3: All three of your choices are correct!</p>
                     <div>   
                         <p>
                           Was it
@@ -259,7 +216,7 @@
                             <option value="Strongman Sam">Strongman Sam</option>
                           </select>
                           with the
-                          <select name="question-tool" id="question-tool-dropdown" class="text-center">
+                          <select name="question-weapon" id="question-weapon-dropdown" class="text-center">
                             <option value="Poisoned Cotton Candy">Poisoned Cotton Candy</option>
                             <option value="Magic Wand">Magic Wand</option>
                             <option value="Fire-Eating Torch">Fire-Eating Torch</option>
@@ -270,7 +227,7 @@
                             <option value="Crystal Ball">Crystal Ball</option>
                           </select>
                           in the
-                          <select name="question-room" id="question-room-dropdown" class="text-center">
+                          <select name="question-scene" id="question-scene-dropdown" class="text-center">
                             <option value="Ferris Wheel">Ferris Wheel</option>
                             <option value="House of Mirrors">House of Mirrors</option>
                             <option value="Carnival Midway">Carnival Midway</option>
@@ -287,44 +244,84 @@
                     </div>
                     <div id="questions">
                         <p>
-                          Was it
-                          <select name="question-character" id="question-character-dropdown" class="text-center">
-                            <option value="Ringmaster Rick">Ringmaster Rick</option>
-                            <option value="Freya the Fortune Teller">Freya the Fortune Teller</option>
-                            <option value="Carl the Clown">Carl the Clown</option>
-                            <option value="Magnificent Macy the Magician">Magnificent Macy the Magician</option>
-                            <option value="Felix the Ferris Wheel Operator">Felix the Ferris Wheel Operator</option>
-                            <option value="Charlie the Cotton Candy Vendor">Charlie the Cotton Candy Vendor</option>
-                            <option value="Rita the Roller Coaster Operator">Rita the Roller Coaster Operator</option>
-                            <option value="Strongman Sam">Strongman Sam</option>
-                          </select>
-                          with the
-                          <select name="question-tool" id="question-tool-dropdown" class="text-center">
-                            <option value="Poisoned Cotton Candy">Poisoned Cotton Candy</option>
-                            <option value="Magic Wand">Magic Wand</option>
-                            <option value="Fire-Eating Torch">Fire-Eating Torch</option>
-                            <option value="Dagger from the House of Mirrors">Dagger from the House of Mirrors</option>
-                            <option value="Tilt-a-Whirl Wrench">Tilt-a-Whirl Wrench</option>
-                            <option value="Popcorn Kernel Bomb">Popcorn Kernel Bomb</option>
-                            <option value="Juggling Pins">Juggling Pins</option>
-                            <option value="Crystal Ball">Crystal Ball</option>
-                          </select>
-                          in the
-                          <select name="question-room" id="question-room-dropdown" class="text-center">
-                            <option value="Ferris Wheel">Ferris Wheel</option>
-                            <option value="House of Mirrors">House of Mirrors</option>
-                            <option value="Carnival Midway">Carnival Midway</option>
-                            <option value="Funhouse">Funhouse</option>
-                            <option value="Cotton Candy Stand">Cotton Candy Stand</option>
-                            <option value="Roller Coaster">Roller Coaster</option>
-                            <option value="Fortune Teller's Tent">Fortune Teller's Tent</option>
-                            <option value="Haunted House">Haunted House</option></select
-                          >?
-                          <button id="question-button">Question</button>
-                          <input name="num-indicator" id="num-indicator" placeholder="num" size="1">
-                        </p>
+                            Was it
+                            <select name="question-character" id="question-character-dropdown" class="text-center">
+                              <option value="Ringmaster Rick">Ringmaster Rick</option>
+                              <option value="Freya the Fortune Teller">Freya the Fortune Teller</option>
+                              <option value="Carl the Clown">Carl the Clown</option>
+                              <option value="Magnificent Macy the Magician">Magnificent Macy the Magician</option>
+                              <option value="Felix the Ferris Wheel Operator">Felix the Ferris Wheel Operator</option>
+                              <option value="Charlie the Cotton Candy Vendor">Charlie the Cotton Candy Vendor</option>
+                              <option value="Rita the Roller Coaster Operator">Rita the Roller Coaster Operator</option>
+                              <option value="Strongman Sam">Strongman Sam</option>
+                            </select>
+                            with the
+                            <select name="question-weapon" id="question-weapon-dropdown" class="text-center">
+                              <option value="Poisoned Cotton Candy">Poisoned Cotton Candy</option>
+                              <option value="Magic Wand">Magic Wand</option>
+                              <option value="Fire-Eating Torch">Fire-Eating Torch</option>
+                              <option value="Dagger from the House of Mirrors">Dagger from the House of Mirrors</option>
+                              <option value="Tilt-a-Whirl Wrench">Tilt-a-Whirl Wrench</option>
+                              <option value="Popcorn Kernel Bomb">Popcorn Kernel Bomb</option>
+                              <option value="Juggling Pins">Juggling Pins</option>
+                              <option value="Crystal Ball">Crystal Ball</option>
+                            </select>
+                            in the
+                            <select name="question-scene" id="question-scene-dropdown" class="text-center">
+                              <option value="Ferris Wheel">Ferris Wheel</option>
+                              <option value="House of Mirrors">House of Mirrors</option>
+                              <option value="Carnival Midway">Carnival Midway</option>
+                              <option value="Funhouse">Funhouse</option>
+                              <option value="Cotton Candy Stand">Cotton Candy Stand</option>
+                              <option value="Roller Coaster">Roller Coaster</option>
+                              <option value="Fortune Teller's Tent">Fortune Teller's Tent</option>
+                              <option value="Haunted House">Haunted House</option></select
+                            >?
+                            <button id="question-button">Question</button>
+                            <input name="num-indicator" id="num-indicator" placeholder="num" size="1">
+                          </p>
                     </div>
                 </section>
+                <section id="randompick" class="text-center row mt-3">
+                    <h3>Random Pick</h3>
+                    <p><strong>Carefully choose your options and make your selections wisely. Your goal is to guess the correct combination and solve the mystery.
+                        After making your choices, click the "Submit" button to reveal the result.
+                        If your choices are correct, they will be highlighted in green. If any of your selections are wrong, 
+                        they will be highlighted in red to help you eliminate incorrect options and bring you one step closer to solving the mystery.</strong></p>
+                    <div class="dropdown">
+                      <select name="character" id="character-dropdown" class="text-center">
+                        <option value="Ringmaster Rick">Ringmaster Rick</option>
+                        <option value="Freya the Fortune Teller">Freya the Fortune Teller</option>
+                        <option value="Carl the Clown">Carl the Clown</option>
+                        <option value="Magnificent Macy the Magician">Magnificent Macy the Magician</option>
+                        <option value="Felix the Ferris Wheel Operator">Felix the Ferris Wheel Operator</option>
+                        <option value="Charlie the Cotton Candy Vendor">Charlie the Cotton Candy Vendor</option>
+                        <option value="Rita the Roller Coaster Operator">Rita the Roller Coaster Operator</option>
+                        <option value="Strongman Sam">Strongman Sam</option>
+                      </select>
+                      <select name="weapon" id="weapon-dropdown" class="text-center">
+                        <option value="Poisoned Cotton Candy">Poisoned Cotton Candy</option>
+                        <option value="Magic Wand">Magic Wand</option>
+                        <option value="Fire-Eating Torch">Fire-Eating Torch</option>
+                        <option value="Dagger from the House of Mirrors">Dagger from the House of Mirrors</option>
+                        <option value="Tilt-a-Whirl Wrench">Tilt-a-Whirl Wrench</option>
+                        <option value="Popcorn Kernel Bomb">Popcorn Kernel Bomb</option>
+                        <option value="Juggling Pins">Juggling Pins</option>
+                        <option value="Crystal Ball">Crystal Ball</option>
+                      </select>
+                      <select name="scene" id="scene-dropdown" class="text-center">
+                        <option value="Ferris Wheel">Ferris Wheel</option>
+                        <option value="House of Mirrors">House of Mirrors</option>
+                        <option value="Carnival Midway">Carnival Midway</option>
+                        <option value="Funhouse">Funhouse</option>
+                        <option value="Cotton Candy Stand">Cotton Candy Stand</option>
+                        <option value="Roller Coaster">Roller Coaster</option>
+                        <option value="Fortune Teller's Tent">Fortune Teller's Tent</option>
+                        <option value="Haunted House">Haunted House</option>
+                      </select>
+                      <button id="submit-button" onclick="checkSelections()">Submit</button>
+                    </div>                
+                </section>   
             </div>
         </main>
     </div>
