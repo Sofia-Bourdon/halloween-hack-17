@@ -30,147 +30,114 @@ const scenes = [
   "Fortune Teller's Tent",
   "Haunted House",
 ];
-let clickcounter1 = 0;
-let clickcounter2 = 0;
-let clickcounter3 = 0;
+// Array to store the three randomized items
+const randomItems = [
+  getRandomItem(characters),
+  getRandomItem(weapons),
+  getRandomItem(scenes),
+];
 
+// get references to each dropdown menu
+const characterDropdown = document.getElementById("character-dropdown");
+const weaponDropdown = document.getElementById("weapon-dropdown");
+const sceneDropdown = document.getElementById("scene-dropdown");
+
+//get referencees to question button and numindicator
+const questionButton1 = document.getElementById("question-button1");
+const numIndicator1 = document.getElementById("num-indicator1");
+
+// Get the correct answers from the randomItems array
+const correctCharacter = randomItems[0];
+const correctWeapon = randomItems[1];
+const correctScene = randomItems[2];
+
+// get refernces to each selection from the dropdown
+let selectedCharacter = characterDropdown.value;
+let selectedWeapon = weaponDropdown.value;
+let selectedScene = sceneDropdown.value;
+
+// get refernces to each table
+let characterTable = document.getElementById("character-table")
+let weaponTable = document.getElementById("weapon-table")
+let sceneTable = document.getElementById("scene-table")
+
+// get refernece to row for each table
+let rows = document.getElementsByTagName("tr");
+
+//set chances for player
+let questionChances = 3;
+let randomChances = 2;
+
+// create a click counter for each table
+let clickcounter = 0;
+
+let definite = []
 // Function to randomly select an item from a list
 function getRandomItem(list) {
   const randomIndex = Math.floor(Math.random() * list.length);
   return list[randomIndex];
 }
 
-function highlightSelectedRowOnTable() {
-  // get refernce to the table
-  let table = document.getElementById("table");
-  //get refernce to the rows
-  let rows = table.getElementsByTagName("tr");
+function highlightSelectedRowOnTable(currentTable) {
+  /**
+   * Function to select a table row and change its color
+   * based on the users confidence in their selection
+   */
+
   
-  // get refernce to the table
-  let table2 = document.getElementById("table2");
-  //get refernce to the rows
-  let rows2 = table2.getElementsByTagName("tr");
-
-  // get refernce to the table
-  let table3 = document.getElementById("table3");
-  //get refernce to the rows
-  let rows3 = table3.getElementsByTagName("tr");
-
-  //iterate through the rows
-  for (let i = 0; i < rows.length; i++) {
-    let currentRow = table.rows[i];
-
-    //bind click event to the row
-    currentRow.onclick = function () {
-      clickcounter1++;
-      //highlight the selected row
-      console.log("You selected:", this);
-      if (clickcounter1 === 1) {
+  for(let i =0; i < rows.length; i++){
+    let currentRow = rows[i];
+    let currentTable = currentRow.parentElement;
+    currentRow.onclick = function (){
+      clickcounter++;
+      if(clickcounter === 1){
         this.classList.add("DefinitelyNot");
         this.children[0].style.color = "red";
-      } else if (clickcounter1 === 2) {
+      }else if(clickcounter === 2){
         this.classList.remove("DefinitelyNot");
         this.classList.add("Possibly");
         this.children[0].style.color = "orange";
-      } else if (clickcounter1 === 3 && !this.classList.contains("Definitely")) {
+      }else if(clickcounter === 3){
         this.classList.remove("Possibly");
         this.classList.add("Definitely");
+        
         this.children[0].style.color = "green";
-      } else {
+      }else{
         this.classList.remove("Definitely");
-        this.classList.add("NotSelected");
         this.children[0].style.color = "black";
-        clickcounter1 = 0;
+        clickcounter = 0;
       }
-      console.log(this.classList);
-    };
+    }
   }
-
-    //iterate through the rows2
-    for (let i = 0; i < rows2.length; i++) {
-      let currentRow = table2.rows[i];
-  
-      //bind click event to the row
-      currentRow.onclick = function () {
-        clickcounter2++;
-        //highlight the selected row
-        console.log("You selected:", this);
-        if (clickcounter2 === 1) {
-          this.classList.add("DefinitelyNot");
-          this.children[0].style.color = "red";
-        } else if (clickcounter2 === 2) {
-          this.classList.remove("DefinitelyNot");
-          this.classList.add("Possibly");
-          this.children[0].style.color = "orange";
-        } else if (clickcounter2 === 3) {
-          this.classList.remove("Possibly");
-          this.classList.add("Definitely");
-          this.children[0].style.color = "green";
-        } else {
-          this.classList.remove("Definitely");
-          this.classList.add("NotSelected");
-          this.children[0].style.color = "black";
-          clickcounter2 = 0;
-        }
-      };
-    }
-
-    //iterate through the rows3
-    for (let i = 0; i < rows3.length; i++) {
-        let currentRow = table3.rows[i];
-    
-        //bind click event to the row
-        currentRow.onclick = function () {
-            clickcounter3++;
-            //highlight the selected row
-            console.log("You selected:", this);
-            if (clickcounter3 === 1) {
-            this.classList.add("DefinitelyNot");
-            this.children[0].style.color = "red";
-            } else if (clickcounter3 === 2) {
-            this.classList.remove("DefinitelyNot");
-            this.classList.add("Possibly");
-            this.children[0].style.color = "orange";
-            } else if (clickcounter3 === 3) {
-            this.classList.remove("Possibly");
-            this.classList.add("Definitely");
-            this.children[0].style.color = "green";
-            } else {
-            this.classList.remove("Definitely");
-            this.classList.add("NotSelected");
-            this.children[0].style.color = "black";
-            clickcounter3 = 0;
-            }
-        };
-    }
 }
 
-function clearSelections() {
-    table = document.getElementById("table");
-    table2 = document.getElementById("table2");
-    table3 = document.getElementById("table3");
-    rows = table.getElementsByTagName("tr");
-    for (let i = 0; i < table.rows.length; i++) {
-        table.rows[i].classList.remove("DefinitelyNot");
-        table.rows[i].classList.remove("Possibly");
-        table.rows[i].classList.remove("Definitely");
-        table.rows[i].classList.add("NotSelected");
-        table.rows[i].children[0].style.color = "black";
-    }
-    for (let i = 0; i < table2.rows.length; i++) {
-        table2.rows[i].classList.remove("DefinitelyNot");
-        table2.rows[i].classList.remove("Possibly");
-        table2.rows[i].classList.remove("Definitely");
-        table2.rows[i].classList.add("NotSelected");
-        table2.rows[i].children[0].style.color = "black";
-    }
-    for (let i = 0; i < table3.rows.length; i++) {
-        table3.rows[i].classList.remove("DefinitelyNot");
-        table3.rows[i].classList.remove("Possibly");
-        table3.rows[i].classList.remove("Definitely");
-        table3.rows[i].classList.add("NotSelected");
-        table3.rows[i].children[0].style.color = "black";
-    }
+function checkForOnlyOneDefiniteInTable(){
+
+}
+
+function clearSelections(){
+
+  for(let i = 0; i < characterTable.rows.length; i++){
+    characterTable.rows[i].classList.remove("DefinitelyNot");
+    characterTable.rows[i].classList.remove("Possibly");
+    characterTable.rows[i].classList.remove("Definitely");
+    characterTable.rows[i].children[0].style.color = "black"
+  }
+
+  for(let i = 0; i < weaponTable.rows.length; i++){
+    weaponTable.rows[i].classList.remove("DefinitelyNot");
+    weaponTable.rows[i].classList.remove("Possibly");
+    weaponTable.rows[i].classList.remove("Definitely");
+    weaponTable.rows[i].children[0].style.color = "black"
+  }
+
+  for(let i = 0; i < sceneTable.rows.length; i++){
+    sceneTable.rows[i].classList.remove("DefinitelyNot");
+    sceneTable.rows[i].classList.remove("Possibly");
+    sceneTable.rows[i].classList.remove("Definitely");
+    sceneTable.rows[i].children[0].style.color = "black"
+  }
+
 }
 
 // Function to highlight the mousedover location
@@ -188,12 +155,7 @@ function changeOpacityOnHover() {
   }
 }
 
-// Array to store the three randomized items
-const randomItems = [
-  getRandomItem(characters),
-  getRandomItem(weapons),
-  getRandomItem(scenes),
-];
+
 
 // Array to store all other items except the three chosen randomly
 const allOtherItems = [
@@ -202,11 +164,13 @@ const allOtherItems = [
   ...scenes.filter((scene) => !randomItems.includes(scene)),
 ];
 
+//----------------
 console.log("Random Items:", randomItems);
 console.log("All Other Items:", allOtherItems);
 
 // Function to highlight selected items based on matches
 function checkSelections() {
+  randomChances--;
   const characterDropdown = document.getElementById("character-dropdown");
   const weaponDropdown = document.getElementById("weapon-dropdown");
   const sceneDropdown = document.getElementById("scene-dropdown");
@@ -217,23 +181,23 @@ function checkSelections() {
   const selectedScene = sceneDropdown.value;
 
   // reference the charactersheet
-  let characterSheet = document.getElementById("table");
-  let characters = characterSheet.getElementsByTagName("td");
+  let characters = characterTable.getElementsByTagName("td");
   // reference the weaponsheet
-  let weaponSheet = document.getElementById("table2");
-  let weapons = weaponSheet.getElementsByTagName("td");
+  let weapons = weaponTable.getElementsByTagName("td");
   // reference the scenesheet
-  let sceneSheet = document.getElementById("table3");
-  let scenes = sceneSheet.getElementsByTagName("td");
+  let scenes = sceneTable.getElementsByTagName("td");
+
 
   // Check if selected items match randomItems or allOtherItems and apply highlighting
   if (randomItems.includes(selectedCharacter)) {
     characterDropdown.style.backgroundColor = "green";
+    console.log(selectedCharacter)
     // iterate through the characters
     for (let i = 0; i < characters.length; i++) {
       // if the character matches the selected character, highlight it green
-      if (characters[i].innerHTML === selectedCharacter) {
-        characters[i].style.color = "green";
+      if(characters[i].textContent === selectedCharacter){
+        console.log("Name Match")
+        characters[i].children[0].style.color = "green"
       }
     }
   } else if (allOtherItems.includes(selectedCharacter)) {
@@ -241,8 +205,9 @@ function checkSelections() {
     // iterate through the characters
     for (let i = 0; i < characters.length; i++) {
       // if the character matches the selected character, highlight it red
-      if (characters[i].innerHTML === selectedCharacter) {
-        characters[i].style.color = "red";
+      if (characters[i].textContent === selectedCharacter) {
+        console.log(characters[i].textContent)
+        characters[i].children[0].style.color = "red";
       }
     }
   }
@@ -252,8 +217,9 @@ function checkSelections() {
     // iterate through the weapons
     for (let i = 0; i < weapons.length; i++) {
       // if the weapon matches the selected weapon, highlight it green
-      if (weapons[i].innerHTML === selectedWeapon) {
-        weapons[i].style.color = "green";
+      console.log(weapons[i].textContent)
+      if (weapons[i].textContent === selectedWeapon) {
+        weapons[i].children[0].style.color = "green";
       }
     }
   } else if (allOtherItems.includes(selectedWeapon)) {
@@ -261,8 +227,8 @@ function checkSelections() {
     // iterate through the weapons
     for (let i = 0; i < weapons.length; i++) {
       // if the weapon matches the selected weapon, highlight it red
-      if (weapons[i].innerHTML === selectedWeapon) {
-        weapons[i].style.color = "red";
+      if (weapons[i].textContent === selectedWeapon) {
+        weapons[i].children[0].style.color = "red";
       }
     }
   }
@@ -270,30 +236,25 @@ function checkSelections() {
   if (randomItems.includes(selectedScene)) {
     sceneDropdown.style.backgroundColor = "green";
     for (let i = 0; i < scenes.length; i++) {
-      if (scenes[i].innerHTML === selectedScene) {
-        scenes[i].style.color = "green";
+      if (scenes[i].textContent === selectedScene) {
+        scenes[i].children[0].style.color = "green";
       }
     }
   } else if (allOtherItems.includes(selectedScene)) {
     sceneDropdown.style.backgroundColor = "red";
     for (let i = 0; i < scenes.length; i++) {
-      if (scenes[i].innerHTML === selectedScene) {
-        scenes[i].style.color = "red";
+      if (scenes[i].textContent === selectedScene) {
+        scenes[i].children[0].style.color = "red";
       }
     }
   }
+
+  if(randomChances === 0){
+    alert("You Are Out of Random Guesses");
+    let button = document.getElementById("submit-button");
+    button.disabled = true;
+  }
 }
-
-// Script for the question mini-game
-const questionButton1 = document.getElementById("question-button1");
-const numIndicator1 = document.getElementById("num-indicator1");
-
-// Get the correct answers from the randomItems array
-const correctCharacter = randomItems[0];
-const correctWeapon = randomItems[1];
-const correctScene = randomItems[2];
-// Set the number of chances
-let chances = 3;
 
 // Add an event listener to the question button 1
 questionButton1.addEventListener("click", () => {
@@ -303,7 +264,7 @@ questionButton1.addEventListener("click", () => {
 
     let correctChoices1 = 0;
     // when the button is clicked, decrement the number of chances
-    chances--;
+    questionChances--;
         if (selectedCharacter === correctCharacter) {
             correctChoices1++;
         }
@@ -317,13 +278,11 @@ questionButton1.addEventListener("click", () => {
     numIndicator1.value = correctChoices1.toString(); // Display the result
 
     // Disable the button if the user is out of chances
-    if (chances === 0) {
+    if (questionChances === 0) {
         alert("You are out of chances!");
         questionButton1.disabled = true;
     }
-    console.log(chances);
 });
-
 
 // Script for the Clues mini game
 
