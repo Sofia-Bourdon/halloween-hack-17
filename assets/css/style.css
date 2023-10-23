@@ -14,7 +14,7 @@ body {
 .index-body {
   width: 100%;
   height: 100%;
-  background-image: url("../images/background.jpg");
+  background-image: url("assets/images/background.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -29,6 +29,16 @@ body {
   background-repeat: no-repeat;
   background-position: center;
 }
+
+.cemetery-body {
+    color: white;
+    width: 100%;
+    height: 100%;
+    background-image: url("assets/images/cemetery-background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
 
 h1,
 h2,
@@ -45,9 +55,13 @@ h6 {
   font-family: Special Elite, sans-serif;
 }
 
-.intro-section, .blurb{
-  background-image: url("../images/parchment.png");
+.intro-section {
+  background-image: url("assets/images/parchment.png");
   background-size: cover;
+}
+
+#blurb {
+    background-color: #6337189e;
 }
 
 .img-card {
@@ -63,13 +77,16 @@ h6 {
 
 /* Style the game board */
 #game-board {
-  background-color: #000;
-  color: #703838;
+  background: 5px #350404;
   text-align: center;
   padding: 20px;
   font-family: "Arial", sans-serif;
   width: 80%;
   margin-left: 10%;
+}
+
+.user-pick {
+    background-color: #34010061;
 }
 
 /* Style input prompts */

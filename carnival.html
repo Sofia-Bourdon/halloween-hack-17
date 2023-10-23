@@ -9,334 +9,342 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Griffy&family=Reenie+Beanie&family=Special+Elite&family=Young+Serif&display=swap" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-nc7Azum3jfcjfWgP7H/1rqq2j1HcUrVqYNxZJF4Bj9uxRsXIDH4A7qRbFDm3wwv+" crossorigin="anonymous"></script>
     </head>
+    
     <body class="carnival-body">
-        <header class="text-center">
-            <h1 class="text-warning text-decoration-underline">The Carnival of Enigmas</h1>
-        </header>
-        <main>
-            <!--Blurb-->
-            <section id="blurb" class="blurb text-dark p-5 m-5 text-center">
-                <article class="article">
-                    <h2 class="text-decoration-underline">The Case</h2>
-                    <p class="text">
-                        <strong>
-                        The Carnival rolled into town, setting up its whimsical world of wonders, merriment, and mysteries. 
-                        Nestled beneath the starlit sky, the carnival was a kaleidoscope of rides, games, and amusements, attracting visitors from far and wide. But beneath the laughter and excitement , a dark cloud loomed. 
-                        An unsettling murmur had spread like wildfire among the carnival-goers. Something sinister had occurred during the carnival's grand opening night. <br><br>
-                        The Carnival Organizer Olivia, who had once been the charismatic heart of the show, has been found lifeless within the confines of the grand arena. The atmosphere shifted from one of joy to an unsettling 
-                        sense of intrigue and suspicion. The question that haunted every visitor was, "Who could have committed this heinous act?"<br><br>
-                        </strong>
-                    </p> 
+        <div id="link-to-main" class="text-center position-absolute top-1 start-5"><a href="/index.html">Back to Home</a></div>
+        <div class="container mt-3">
+                <h1 class="text-warning text-center text-decoration-underline mt-5">The Carnival of Enigmas</h1>
+            <main>
+                <!--Blurb-->
+                <section id="blurb" class="text-white p-5 text-center">
+                    <article class="article">
+                        <h2 class="text-decoration-underline">The Case</h2>
+                        <p>
+                            <strong>
+                            The Carnival rolled into town, setting up its whimsical world of wonders, merriment, and mysteries. 
+                            Nestled beneath the starlit sky, the carnival was a kaleidoscope of rides, games, and amusements, attracting visitors from far and wide. But beneath the laughter and excitement , a dark cloud loomed. 
+                            An unsettling murmur had spread like wildfire among the carnival-goers. Something sinister had occurred during the carnival's grand opening night. <br><br>
+                            The Carnival Organizer Olivia, who had once been the charismatic heart of the show, has been found lifeless within the confines of the grand arena. The atmosphere shifted from one of joy to an unsettling 
+                            sense of intrigue and suspicion. The question that haunted every visitor was, "Who could have committed this heinous act?"<br><br>
+                            </strong>
+                        </p> 
+                        <p>
+                            <strong>
+                            The list of potential culprits included the carnival's peculiar cast of characters, each with their own secrets and motives. And what about the weapons? From magic wands to juggling pins, 
+                            each held the potential to be the instrument of Carnival Organizer Olivia's untimely demise. An amateur sleuth emergees from the crowd, determined to unravel the carnival's most pressing mystery. 
+                            The Carnival of Enigmas may never again be a place of fun and amusement but a carnival of secrets and suspicion. <br><br>
+                            Now, it's up to you to solve the twisted puzzle that has gripped the carnival in fear. The stage is set, the suspects are in place, and the game of Deaths Veil begins. 
+                            May your detective skills shine amidst the neon glow, for the truth lies hidden within the colorful chaos of the carnival's darkest corners.
+                            </strong>
+                        </p>
+                    </article>
+                </section>
+                <!--/.blurb-->
+    
+                <section id="clues-and-questions" class="row m-3">
+                    <!--Clues-->
+                    <div class="text-center row">
+                        <div id="clues-section" class="user-pick col-sm p-3 m-3">
+                            <a class="btn" href="#text-info" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="text-info">
+                                <h2 class="text-warning text-decoration-underline">Clues</h2>
+                            </a>
+                            <div class="collapse" id="text-info">
+                                <div class="card card-body collapse">
+                                    <p><strong>In this intriguing mini-game, you are presented with two choices to aid in your detective 
+                                        journey. Let's unravel the options:</strong>
+                                    </p>
+                                    <p s><strong class="text-decoration-underline text-primary">1. "It Definitely Was Not" Clue:</strong></p>
+                
+                                    <p><strong>Choose this option, and you'll receive valuable information for eliminating suspects. 
+                                        After clicking "Submit," the game code will reveal three items : a character, a weapon, 
+                                        and a scene. These are not the correct choices for the mystery. 
+                                        They can be confidently eliminated as potential suspects. 
+                                        Use this clue to sharpen your focus and remove false leads.</strong></p>
+                                        
+                                    <p><strong class="text-decoration-underline text-primary">2. "It Might Have Been" Clue:</strong></p>
+                                        
+                                    <p><strong>Opt for this intriguing clue, and you'll receive a mixed bag of possibilities. 
+                                        After clicking "Submit," the game code will provide three items : one is the right answer,
+                                        and the other two are incorrect. It's your job to distinguish the true solution from the 
+                                        red herrings. Analyze the options carefully, apply your detective skills, 
+                                        and decide which one is correct.</strong></p>  
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <div>
+                                    <p>
+                                        <strong>
+                                        <select name="clue-type-1" id="clue-type-1-dropdown">
+                                            <option value="It definitely was not">It definitely was not</option>
+                                            <option value="It might have been">It might have been</option>
+                                        </select>
+                                        <input name="clue-character" id="clue-character-dropdown" placeholder="Character">
+                                        <span class="text-warning">with the</span>    
+                                        <input name="clue-weapon" id="clue-weapon-dropdown" placeholder="Weapon">
+                                        <span class="text-warning">in the</span>
+                                        <input name="clue-scene" id="clue-scene-dropdown" placeholder="Scene">
+                                        <button id="select-button1" class="btn btn-success m-3">Select</button>
+                                        </strong>
+                                    </p>
+                                </div>
+                                <div>
+                                    <p>
+                                        <strong>
+                                        <select name="clue-type-2" id="clue-type-2-dropdown">
+                                            <option value="It definitely was not">It definitely was not</option>
+                                            <option value="It might have been">It might have been</option>
+                                        </select>
+                                        <input name="clue-character" id="clue-character-dropdown" placeholder="Character">
+                                        <span class="text-warning">with the</span>    
+                                        <input name="clue-weapon" id="clue-weapon-dropdown" placeholder="Weapon">
+                                        <span class="text-warning">in the</span>
+                                        <input name="clue-scene" id="clue-scene-dropdown" placeholder="Scene">
+                                        <button id="select-button2" class="btn btn-success m-3">Select</button>
+                                        </strong>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--/.clues-->
+                        <!--Questions-->
+                        <div id="questions-section" class="user-pick col-sm p-3 m-3">
+                            <h2 class="text-warning text-decoration-underline">Questions</h2>
+                            <p><strong>Your goal is to ask the right questions and decipher the truth.<br>
+                            Here's how it works: <br>
+                            Once you've crafted your question, press the "Submit" button. <br>
+                            The game will return a number that signifies how many of your choices are correct. <br>
+                            The number you receive will be your guide: <br><br>
+    
+                            0: All of your choices are incorrect. <br>
+                            1: Two of your choices are incorrect. <br>
+                            2: One of your choices is incorrect. <br>
+                            3: All three of your choices are correct!</strong></p>
+                            <!--Question 1-->
+                            <div class="row">   
+                                <p>
+                                    <strong>
+                                    <span class="text-warning">Was it</span>
+                                    <select name="question-character1" id="question-character-dropdown1" class="text-center">
+                                        <option value="Ringmaster Rick">Ringmaster Rick</option>
+                                        <option value="Freya the Fortune Teller">Freya the Fortune Teller</option>
+                                        <option value="Carl the Clown">Carl the Clown</option>
+                                        <option value="Magnificent Macy the Magician">Magnificent Macy the Magician</option>
+                                        <option value="Felix the Ferris Wheel Operator">Felix the Ferris Wheel Operator</option>
+                                        <option value="Charlie the Cotton Candy Vendor">Charlie the Cotton Candy Vendor</option>
+                                        <option value="Rita the Roller Coaster Operator">Rita the Roller Coaster Operator</option>
+                                        <option value="Strongman Sam">Strongman Sam</option>
+                                    </select>
+                                    <span class="text-warning">with the</span>
+                                    <select name="question-weapon1" id="question-weapon-dropdown1" class="text-center">
+                                        <option value="Poisoned Cotton Candy">Poisoned Cotton Candy</option>
+                                        <option value="Magic Wand">Magic Wand</option>
+                                        <option value="Fire-Eating Torch">Fire-Eating Torch</option>
+                                        <option value="Dagger from the House of Mirrors">Dagger from the House of Mirrors</option>
+                                        <option value="Tilt-a-Whirl Wrench">Tilt-a-Whirl Wrench</option>
+                                        <option value="Popcorn Kernel Bomb">Popcorn Kernel Bomb</option>
+                                        <option value="Juggling Pins">Juggling Pins</option>
+                                        <option value="Crystal Ball">Crystal Ball</option>
+                                    </select>
+                                    <span class="text-warning">in the</span>
+                                    <select name="question-scene1" id="question-scene-dropdown1" class="text-center">
+                                        <option value="Ferris Wheel">Ferris Wheel</option>
+                                        <option value="House of Mirrors">House of Mirrors</option>
+                                        <option value="Carnival Midway">Carnival Midway</option>
+                                        <option value="Funhouse">Funhouse</option>
+                                        <option value="Cotton Candy Stand">Cotton Candy Stand</option>
+                                        <option value="Roller Coaster">Roller Coaster</option>
+                                        <option value="Fortune Teller's Tent">Fortune Teller's Tent</option>
+                                        <option value="Haunted House">Haunted House</option>
+                                    </select>
+                                    ?
+                                    <button id="question-button1" class="btn btn-danger m-3">Question</button>
+                                    <input name="num-indicator" id="num-indicator1" placeholder="num" size="1">
+                                    </strong>
+                                </p>
+                            </div>
+                        <!--/.question 1-->
+                       </div>
+                    </div>
+                    <!--/.questions-->
+                </section>
+                <!--/.clues and questions-->
+    
+                <!--Random Pick-->
+                <section id="randompick" class="row text-center p-3 m-3 user-pick">
+    
+                    <h2 class="text-warning text-decoration-underline">Random Pick</h2>
                     <p>
-                        <strong>
-                        The list of potential culprits included the carnival's peculiar cast of characters, each with their own secrets and motives. And what about the weapons? From magic wands to juggling pins, 
-                        each held the potential to be the instrument of Carnival Organizer Olivia's untimely demise. An amateur sleuth emergees from the crowd, determined to unravel the carnival's most pressing mystery. 
-                        The Carnival of Enigmas may never again be a place of fun and amusement but a carnival of secrets and suspicion. <br><br>
-                        Now, it's up to you to solve the twisted puzzle that has gripped the carnival in fear. The stage is set, the suspects are in place, and the game of Deaths Veil begins. 
-                        May your detective skills shine amidst the neon glow, for the truth lies hidden within the colorful chaos of the carnival's darkest corners.
+                        <strong>Carefully choose your options and make your selections wisely. Your goal is to guess the correct combination and solve the mystery.
+                        After making your choices, click the "Submit" button to reveal the result.
+                        If your choices are correct, they will be highlighted in green. If any of your selections are wrong, 
+                        they will be highlighted in red to help you eliminate incorrect options and bring you one step closer to solving the mystery.
                         </strong>
                     </p>
-                </article>
-                <div id="link-to-main" class="text-center"><a href="/index.html">Back to main</a></div>
-            </section>
-            <!--/.blurb-->
-            <section id="clues-and-questions" class="row bg-dark opacity-75 m-3">
-                <!--Clues-->
-                <div class="text-center row">
-                    <div id="clues-section" class="col-sm p-3 m-3">
-                        <h2 class="text-warning text-decoration-underline">Clues</h2>
-                        <p><strong>In this intriguing mini-game, you are presented with two choices to aid in your detective 
-                        journey. Let's unravel the options:</strong>
-                        </p>
-                        <p class=""><strong class="text-decoration-underline text-primary">1. "It Definitely Was Not" Clue:</strong></p>
-
-                        <p><strong>Choose this option, and you'll receive valuable information for eliminating suspects. 
-                        After clicking "Submit," the game code will reveal three items : a character, a weapon, 
-                        and a scene. These are not the correct choices for the mystery. 
-                        They can be confidently eliminated as potential suspects. 
-                        Use this clue to sharpen your focus and remove false leads.</strong></p>
-                        
-                        <p><strong class="text-decoration-underline text-primary">2. "It Might Have Been" Clue:</strong></p>
-                        
-                        <p><strong>Opt for this intriguing clue, and you'll receive a mixed bag of possibilities. 
-                        After clicking "Submit," the game code will provide three items : one is the right answer,
-                        and the other two are incorrect. It's your job to distinguish the true solution from the 
-                        red herrings. Analyze the options carefully, apply your detective skills, 
-                        and decide which one is correct.</strong></p>
-                        
-                        <div class="text-center">
-                            <div>
-                                <p>
-                                    <strong>
-                                    <select name="clue-type-1" id="clue-type-1-dropdown">
-                                        <option value="It definitely was not">It definitely was not</option>
-                                        <option value="It might have been">It might have been</option>
-                                    </select>
-                                    <input name="clue-character" id="clue-character-dropdown" placeholder="Character">
-                                    <span class="text-warning">with the</span>    
-                                    <input name="clue-weapon" id="clue-weapon-dropdown" placeholder="Weapon">
-                                    <span class="text-warning">in the</span>
-                                    <input name="clue-scene" id="clue-scene-dropdown" placeholder="Scene">
-                                    <button id="select-button1" class="btn btn-success m-3">Select</button>
-                                    </strong>
-                                </p>
-                            </div>
-                            <div>
-                                <p>
-                                    <strong>
-                                    <select name="clue-type-2" id="clue-type-2-dropdown">
-                                        <option value="It definitely was not">It definitely was not</option>
-                                        <option value="It might have been">It might have been</option>
-                                    </select>
-                                    <input name="clue-character" id="clue-character-dropdown" placeholder="Character">
-                                    <span class="text-warning">with the</span>    
-                                    <input name="clue-weapon" id="clue-weapon-dropdown" placeholder="Weapon">
-                                    <span class="text-warning">in the</span>
-                                    <input name="clue-scene" id="clue-scene-dropdown" placeholder="Scene">
-                                    <button id="select-button2" class="btn btn-success m-3">Select</button>
-                                    </strong>
-                                </p>
-                            </div>
-                        </div>
+                    <div class="row">
+                        <select name="character" id="character-dropdown" class="col-sm text-center p-2 m-3">
+                            <option value="Ringmaster Rick">Ringmaster Rick</option>
+                            <option value="Freya the Fortune Teller">Freya the Fortune Teller</option>
+                            <option value="Carl the Clown">Carl the Clown</option>
+                            <option value="Magnificent Macy the Magician">Magnificent Macy the Magician</option>
+                            <option value="Felix the Ferris Wheel Operator">Felix the Ferris Wheel Operator</option>
+                            <option value="Charlie the Cotton Candy Vendor">Charlie the Cotton Candy Vendor</option>
+                            <option value="Rita the Roller Coaster Operator">Rita the Roller Coaster Operator</option>
+                            <option value="Strongman Sam">Strongman Sam</option>
+                        </select>
+                        <select name="weapon" id="weapon-dropdown" class="col-sm text-center p-2 m-3">
+                            <option value="Poisoned Cotton Candy">Poisoned Cotton Candy</option>
+                            <option value="Magic Wand">Magic Wand</option>
+                            <option value="Fire-Eating Torch">Fire-Eating Torch</option>
+                            <option value="Dagger from the House of Mirrors">Dagger from the House of Mirrors</option>
+                            <option value="Tilt-a-Whirl Wrench">Tilt-a-Whirl Wrench</option>
+                            <option value="Popcorn Kernel Bomb">Popcorn Kernel Bomb</option>
+                            <option value="Juggling Pins">Juggling Pins</option>
+                            <option value="Crystal Ball">Crystal Ball</option>
+                        </select>
+                        <select name="scene" id="scene-dropdown" class="col-sm text-center p-2 m-3">
+                            <option value="Ferris Wheel">Ferris Wheel</option>
+                            <option value="House of Mirrors">House of Mirrors</option>
+                            <option value="Carnival Midway">Carnival Midway</option>
+                            <option value="Funhouse">Funhouse</option>
+                            <option value="Cotton Candy Stand">Cotton Candy Stand</option>
+                            <option value="Roller Coaster">Roller Coaster</option>
+                            <option value="Fortune Teller's Tent">Fortune Teller's Tent</option>
+                            <option value="Haunted House">Haunted House</option>
+                        </select>
+                        <button id="submit-button" class="btn btn-warning m-3" onclick="checkSelections()">Submit</button>
+                    </div>                
+                </section>
+                <!--/.random pick-->
+    
+                <!--Detective Table-->
+                <section id="detective-table" class="text-center m-3">
+                    <h2 class="text-warning text-decoration-underline">Detective Recording Table</h2>
+                    <p><strong>
+                        As you uncover clues, record your findings in the table above to keep track of the 
+                        eliminations and potential leads. <br>
+                        Your success in the mini-games below hinges on your ability to discern the truth from deception. <br>
+                        Highlight the item "RED" to eliminate as a suspect. Highlight "Orange" to mark as suspicious and Highlight as "Green" to lock in your conclusions.
+                    </strong></p>
+                </section>
+                <!--/.detective table-->
+    
+                <!--Game Board-->
+                <section id="game-board" class="row text-center mb-3">
+                    <div id="character-sheet" class="pick-sheet col-sm p-3">
+                        <table id="table" class="table text-center" onclick="highlightSelectedRowOnTable()">
+                            <thead>
+                                <tr>
+                                    <th scope="col"><h3 class="text-primary text-decoration-underline">Character</h3></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr >
+                                    <td><strong role="button">Ringmaster Rick</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><strong role="button">Freya the Fortune Teller</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><strong role="button">Carl the Clown</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><strong role="button">Magnificent Macy the Magician</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><strong role="button">Felix the Ferris Wheel Operator</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><strong role="button">Charlie the Cotton Candy Vendor</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><strong role="button">Rita the Roller Coaster Operator</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><strong role="button">Strongman Sam</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
-                    <!--/.clues-->
-                    <!--Questions-->
-                    <div id="questions-section" class="col-sm p-3 m-3">
-                        <h2 class="text-warning text-decoration-underline">Questions</h2>
-                        <p><strong>Your goal is to ask the right questions and decipher the truth.<br>
-                        Here's how it works: <br>
-                        Once you've crafted your question, press the "Submit" button. <br>
-                        The game will return a number that signifies how many of your choices are correct. <br>
-                        The number you receive will be your guide: <br><br>
-
-                        0: All of your choices are incorrect. <br>
-                        1: Two of your choices are incorrect. <br>
-                        2: One of your choices is incorrect. <br>
-                        3: All three of your choices are correct!</strong></p>
-                        <!--Question 1-->
-                        <div class="row">   
-                            <p>
-                                <strong>
-                                <span class="text-warning">Was it</span>
-                                <select name="question-character1" id="question-character-dropdown1" class="text-center">
-                                    <option value="Ringmaster Rick">Ringmaster Rick</option>
-                                    <option value="Freya the Fortune Teller">Freya the Fortune Teller</option>
-                                    <option value="Carl the Clown">Carl the Clown</option>
-                                    <option value="Magnificent Macy the Magician">Magnificent Macy the Magician</option>
-                                    <option value="Felix the Ferris Wheel Operator">Felix the Ferris Wheel Operator</option>
-                                    <option value="Charlie the Cotton Candy Vendor">Charlie the Cotton Candy Vendor</option>
-                                    <option value="Rita the Roller Coaster Operator">Rita the Roller Coaster Operator</option>
-                                    <option value="Strongman Sam">Strongman Sam</option>
-                                </select>
-                                <span class="text-warning">with the</span>
-                                <select name="question-weapon1" id="question-weapon-dropdown1" class="text-center">
-                                    <option value="Poisoned Cotton Candy">Poisoned Cotton Candy</option>
-                                    <option value="Magic Wand">Magic Wand</option>
-                                    <option value="Fire-Eating Torch">Fire-Eating Torch</option>
-                                    <option value="Dagger from the House of Mirrors">Dagger from the House of Mirrors</option>
-                                    <option value="Tilt-a-Whirl Wrench">Tilt-a-Whirl Wrench</option>
-                                    <option value="Popcorn Kernel Bomb">Popcorn Kernel Bomb</option>
-                                    <option value="Juggling Pins">Juggling Pins</option>
-                                    <option value="Crystal Ball">Crystal Ball</option>
-                                </select>
-                                <span class="text-warning">in the</span>
-                                <select name="question-scene1" id="question-scene-dropdown1" class="text-center">
-                                    <option value="Ferris Wheel">Ferris Wheel</option>
-                                    <option value="House of Mirrors">House of Mirrors</option>
-                                    <option value="Carnival Midway">Carnival Midway</option>
-                                    <option value="Funhouse">Funhouse</option>
-                                    <option value="Cotton Candy Stand">Cotton Candy Stand</option>
-                                    <option value="Roller Coaster">Roller Coaster</option>
-                                    <option value="Fortune Teller's Tent">Fortune Teller's Tent</option>
-                                    <option value="Haunted House">Haunted House</option>
-                                </select>
-                                ?
-                                <button id="question-button1" class="btn btn-danger m-3">Question</button>
-                                <input name="num-indicator" id="num-indicator1" placeholder="num" size="1">
-                                </strong>
-                            </p>
-                        </div>
-                    <!--/.question 1-->
-                   </div>
-                </div>
-                <!--/.questions-->
-            </section>
-            <!--/.clues and questions-->
-
-            <!--Random Pick-->
-            <section id="randompick" class="row text-center p-3 m-3 bg-dark opacity-75">
-
-                <h2 class="text-warning text-decoration-underline">Random Pick</h2>
-                <p>
-                    <strong>Carefully choose your options and make your selections wisely. Your goal is to guess the correct combination and solve the mystery.
-                    After making your choices, click the "Submit" button to reveal the result.
-                    If your choices are correct, they will be highlighted in green. If any of your selections are wrong, 
-                    they will be highlighted in red to help you eliminate incorrect options and bring you one step closer to solving the mystery.
-                    </strong>
-                </p>
-                <div class="row">
-                    <select name="character" id="character-dropdown" class="text-center m-3">
-                        <option value="Ringmaster Rick">Ringmaster Rick</option>
-                        <option value="Freya the Fortune Teller">Freya the Fortune Teller</option>
-                        <option value="Carl the Clown">Carl the Clown</option>
-                        <option value="Magnificent Macy the Magician">Magnificent Macy the Magician</option>
-                        <option value="Felix the Ferris Wheel Operator">Felix the Ferris Wheel Operator</option>
-                        <option value="Charlie the Cotton Candy Vendor">Charlie the Cotton Candy Vendor</option>
-                        <option value="Rita the Roller Coaster Operator">Rita the Roller Coaster Operator</option>
-                        <option value="Strongman Sam">Strongman Sam</option>
-                    </select>
-                    <select name="weapon" id="weapon-dropdown" class="text-center m-3">
-                        <option value="Poisoned Cotton Candy">Poisoned Cotton Candy</option>
-                        <option value="Magic Wand">Magic Wand</option>
-                        <option value="Fire-Eating Torch">Fire-Eating Torch</option>
-                        <option value="Dagger from the House of Mirrors">Dagger from the House of Mirrors</option>
-                        <option value="Tilt-a-Whirl Wrench">Tilt-a-Whirl Wrench</option>
-                        <option value="Popcorn Kernel Bomb">Popcorn Kernel Bomb</option>
-                        <option value="Juggling Pins">Juggling Pins</option>
-                        <option value="Crystal Ball">Crystal Ball</option>
-                    </select>
-                    <select name="scene" id="scene-dropdown" class="text-center m-3">
-                        <option value="Ferris Wheel">Ferris Wheel</option>
-                        <option value="House of Mirrors">House of Mirrors</option>
-                        <option value="Carnival Midway">Carnival Midway</option>
-                        <option value="Funhouse">Funhouse</option>
-                        <option value="Cotton Candy Stand">Cotton Candy Stand</option>
-                        <option value="Roller Coaster">Roller Coaster</option>
-                        <option value="Fortune Teller's Tent">Fortune Teller's Tent</option>
-                        <option value="Haunted House">Haunted House</option>
-                    </select>
-                    <button id="submit-button" class="btn btn-warning m-3" onclick="checkSelections()">Submit</button>
-                </div>                
-            </section>
-            <!--/.random pick-->
-
-            <!--Detective Table-->
-            <section id="detective-table" class="text-center bg-dark opacity-75 m-3">
-                <h2 class="text-warning text-decoration-underline">Detective Recording Table</h2>
-                <p><strong>
-                    As you uncover clues, record your findings in the table above to keep track of the 
-                    eliminations and potential leads. <br>
-                    Your success in the mini-games below hinges on your ability to discern the truth from deception. <br>
-                    Highlight the item "RED" to eliminate as a suspect. Highlight "Orange" to mark as suspicious and Highlight as "Green" to lock in your conclusions.
-                </strong></p>
-            </section>
-            <!--/.detective table-->
-
-            <!--Game Board-->
-            <section id="game-board" class="row text-center bg-dark opacity-75 mb-3">
-                <div id="character-sheet" class="col-sm p-3">
-                    <table id="character-table" class="table text-center" onclick="highlightSelectedRowOnTable()">
-                        <thead>
-                            <tr>
-                                <th scope="col"><h3 class="text-primary text-decoration-underline">Character</h3></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr >
-                                <td><strong role="button">Ringmaster Rick</strong></td>
-                            </tr>
-                            <tr>
-                                <td><strong role="button">Freya the Fortune Teller</strong></td>
-                            </tr>
-                            <tr>
-                                <td><strong role="button">Carl the Clown</strong></td>
-                            </tr>
-                            <tr>
-                                <td><strong role="button">Magnificent Macy the Magician</strong></td>
-                            </tr>
-                            <tr>
-                                <td><strong role="button">Felix the Ferris Wheel Operator</strong></td>
-                            </tr>
-                            <tr>
-                                <td><strong role="button">Charlie the Cotton Candy Vendor</strong></td>
-                            </tr>
-                            <tr>
-                                <td><strong role="button">Rita the Roller Coaster Operator</strong></td>
-                            </tr>
-                            <tr>
-                                <td><strong role="button">Strongman Sam</strong></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div id="weapon-sheet" class="col-sm p-3">
-                    <table id="weapon-table" class="table text-center" onclick="highlightSelectedRowOnTable()">
-                        <thead>
-                            <tr>
-                                <th><h3 class="text-primary text-decoration-underline">Weapons</h3></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong role="button">Poisoned Cotton Candy</strong></td>
-                            </tr>
-                            <tr>
-                                <td><strong role="button">Magic Wand</strong></td>
-                            </tr>
-                            <tr>
-                                <td><strong role="button">Fire-Eating Torch</strong></td>
-                            </tr>
-                            <tr>
-                                <td><strong role="button">Dagger from the House of Mirrors</strong></td>
-                            </tr>
-                            <tr>
-                                <td><strong role="button">Tilt-a-Whirl Wrench</strong></td>
-                            </tr>
-                            <tr>
-                                <td><strong role="button">Popcorn Kernel Bomb</strong></td>
-                            </tr>
-                            <tr>
-                                <td><strong role="button">Juggling Pins</strong></td>
-                            </tr>
-                            <tr>
-                                <td><strong role="button">Crystal Ball</strong></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div id="scene-sheet" class="col-sm p-3">
-                    <table id="scene-table" class="table text-center" onclick="highlightSelectedRowOnTable()">
-                        <thead>
-                            <tr>
-                                <th><h3 class="text-primary text-decoration-underline">Scene</h3></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong role="button">Ferris Wheel</strong></td>
-                            </tr>
-                            <tr>
-                                <td><strong role="button">House of Mirrors</strong></td>
-                            </tr>
-                            <tr>
-                                <td><strong role="button">Carnival Midway</strong></td>
-                            </tr>
-                            <tr>
-                                <td><strong role="button">Funhouse</strong></td>
-                            </tr>
-                            <tr>
-                                <td><strong role="button">Cotton Candy Stand</strong></td>
-                            </tr>
-                            <tr>
-                                <td><strong role="button">Roller Coaster</strong></td>
-                            </tr>
-                            <tr>
-                                <td><strong role="button">Fortune Teller's Tent</strong></td>
-                            </tr>
-                            <tr>
-                                <td><strong role="button">Haunted House</strong></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div id="final-guess d-flex">
-                    <button class="btn btn-success">Final Guess</button>
-                    <button class="btn btn-danger" onclick="clearSelections()">Clear Selection</button>
-                </div>
-            </section>
-            <!--./game board-->
-        </main>
+                    <div id="weapon-sheet" class="pick-sheet col-sm p-3">
+                        <table id="table2" class="table text-center" onclick="highlightSelectedRowOnTable()">
+                            <thead>
+                                <tr>
+                                    <th><h3 class="text-primary text-decoration-underline">Weapons</h3></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong role="button">Poisoned Cotton Candy</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><strong role="button">Magic Wand</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><strong role="button">Fire-Eating Torch</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><strong role="button">Dagger from the House of Mirrors</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><strong role="button">Tilt-a-Whirl Wrench</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><strong role="button">Popcorn Kernel Bomb</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><strong role="button">Juggling Pins</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><strong role="button">Crystal Ball</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="scene-sheet" class="pick-sheet col-sm p-3">
+                        <table id="table3" class="table text-center" onclick="highlightSelectedRowOnTable()">
+                            <thead>
+                                <tr>
+                                    <th><h3 class="text-primary text-decoration-underline">Scene</h3></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong role="button">Ferris Wheel</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><strong role="button">House of Mirrors</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><strong role="button">Carnival Midway</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><strong role="button">Funhouse</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><strong role="button">Cotton Candy Stand</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><strong role="button">Roller Coaster</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><strong role="button">Fortune Teller's Tent</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><strong role="button">Haunted House</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="final-guess d-flex">
+                        <button class="btn btn-success">Final Guess</button>
+                        <button class="btn btn-danger" onclick="clearSelections()">Clear Selection</button>
+                    </div>
+                </section>
+                <!--./game board-->
+            </main>
+        </div>
         <footer>
             <div class="text-center">
                 <p><strong>Created by: <a href="">Mark Young</a> <a href="">Enda Magennis</a> <a href="">Sofia Bordon</a>
