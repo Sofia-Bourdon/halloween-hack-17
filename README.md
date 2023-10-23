@@ -12,7 +12,7 @@
 # SUBMISSION
 ## Deployment
 #### _(please note, your team must also include the deployed links in the usual submission in Hackapp)_
-The project is deployed and can be accessed at [http://your-deployed-link.com](http://your-deployed-link.com).
+The project is deployed and can be accessed at https://sofia-bourdon.github.io/halloween-hack-17/.
 
 ## Criteria
 In this section, we will briefly discuss how our team addressed the applicable criteria:
