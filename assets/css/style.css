@@ -49,6 +49,12 @@ h6 {
   font-family: griffy;
 }
 
+/* style icons with links */
+.link-icon {
+    text-decoration: none;
+    color: white;
+}
+
 .intro-text {
   font-size: larger;
   font-weight: 400;
@@ -84,6 +90,8 @@ h6 {
   width: 80%;
   margin-left: 10%;
 }
+
+/* style background of clues and questions */
 
 .user-pick {
     background-color: #34010061;
