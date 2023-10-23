@@ -58,6 +58,7 @@ let selectedScene = sceneDropdown.value;
 
 // get refernces to each table
 let characterTable = document.getElementById("character-table")
+console.log(characterTable)
 let weaponTable = document.getElementById("weapon-table")
 let sceneTable = document.getElementById("scene-table")
 
@@ -196,7 +197,6 @@ function checkSelections() {
     for (let i = 0; i < characters.length; i++) {
       // if the character matches the selected character, highlight it green
       if(characters[i].textContent === selectedCharacter){
-        console.log("Name Match")
         characters[i].children[0].style.color = "green"
       }
     }
@@ -254,7 +254,7 @@ function checkSelections() {
     let button = document.getElementById("submit-button");
     button.disabled = true;
   }
-}
+};
 
 // Add an event listener to the question button 1
 questionButton1.addEventListener("click", () => {
