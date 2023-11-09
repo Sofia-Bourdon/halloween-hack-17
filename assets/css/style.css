@@ -71,9 +71,17 @@ h6 {
 }
 
 .img-card {
-  width: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30rem;
   height: auto;
-  /* height: 30vh; */
+  margin-bottom: 30px;
+}
+
+.img-card a img{
+  width: 250px;
+  height: 200px;
 }
 
 .img-thumbnail {
